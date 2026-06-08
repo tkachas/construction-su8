@@ -1,0 +1,105 @@
+.timeline {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 60px);
+  margin-top: 48px;
+}
+
+.rail {
+  position: sticky;
+  top: 104px;
+  align-self: start;
+  display: grid;
+  gap: 12px;
+  min-height: 520px;
+  padding-left: 28px;
+}
+
+.line {
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 6px;
+  width: 2px;
+  overflow: hidden;
+  background: var(--color-line);
+}
+
+.line span {
+  display: block;
+  width: 100%;
+  background: var(--color-accent);
+  transition: height 240ms ease;
+}
+
+.rail a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: -28px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-line-strong);
+  border-radius: 50%;
+  background: var(--color-bg);
+  transform: translateY(-50%);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.activeMarker {
+  color: var(--color-text) !important;
+}
+
+.activeMarker .dot {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.cards {
+  display: grid;
+  gap: 26px;
+}
+
+.cardAnchor {
+  scroll-margin-top: 112px;
+}
+
+@media (max-width: 920px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .rail {
+    position: static;
+    display: flex;
+    min-height: auto;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 0 0 10px;
+  }
+
+  .line,
+  .dot {
+    display: none;
+  }
+
+  .rail a {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0 12px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+}

@@ -1,0 +1,63 @@
+.contacts {
+  background: var(--color-dark);
+  color: #fff;
+}
+
+.contacts :global(.section-lead) {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.7fr);
+  gap: clamp(32px, 7vw, 88px);
+  align-items: start;
+}
+
+.contactCard {
+  display: grid;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contactCard a,
+.contactCard > span {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 800;
+}
+
+.contactCard a + a,
+.contactCard a + span,
+.contactCard span + .requisites {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.contactCard small {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.requisites {
+  padding-top: 18px;
+}
+
+.requisites strong {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
