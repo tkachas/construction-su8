@@ -1,13 +1,62 @@
 body {
   min-width: 320px;
   color: var(--color-text);
-  background:
-    linear-gradient(rgba(31, 37, 40, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31, 37, 40, 0.045) 1px, transparent 1px),
-    var(--color-bg);
-  background-size: 48px 48px;
+  background: linear-gradient(180deg, #fbfcfa 0%, var(--color-bg) 100%);
+  background-attachment: fixed;
   font-family: var(--font-sans);
   line-height: 1.5;
+}
+
+html[data-bg="clean"] body {
+  background: linear-gradient(180deg, #fbfcfa 0%, var(--color-bg) 100%);
+  background-attachment: fixed;
+}
+
+html[data-bg="material"] body {
+  background:
+    linear-gradient(180deg, rgba(249, 249, 244, 0.18) 0%, rgba(232, 231, 224, 0.26) 100%),
+    url("../assets/textures/soft-concrete.webp"),
+    #e6e4dc;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html[data-bg="sections"] body {
+  background: #f4f6f3;
+}
+
+html[data-bg="sections"] main > section:not(#contacts) {
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: inset 0 1px 0 rgba(183, 191, 198, 0.34);
+}
+
+html[data-bg="sections"] main > section:nth-child(even):not(#contacts) {
+  background: rgba(232, 237, 232, 0.6);
+}
+
+html[data-bg="sections"] main > section:first-child {
+  box-shadow: none;
+}
+
+html[data-bg="sections"] main > #contacts {
+  background: var(--color-dark);
+  box-shadow: none;
+}
+
+@media (max-width: 920px) {
+  body,
+  html[data-bg="clean"] body,
+  html[data-bg="material"] body {
+    background-attachment: scroll;
+  }
+
+  html[data-bg="material"] body {
+    background-position: center top;
+    background-repeat: no-repeat, repeat-y, repeat;
+    background-size: auto, 1120px auto, auto;
+  }
 }
 
 a {
