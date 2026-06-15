@@ -9,28 +9,39 @@
 }
 
 .modal {
+  --modal-padding: clamp(22px, 4vw, 42px);
+
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: min(100%, 1080px);
   max-height: min(920px, calc(100vh - 48px));
-  overflow: auto;
-  padding: clamp(22px, 4vw, 42px);
+  overflow: hidden;
   border-radius: var(--radius);
   background: var(--color-bg);
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.scrollArea {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--modal-padding);
 }
 
 .closeButton {
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--color-line);
+  border: none;
   border-radius: var(--radius);
-  background: var(--color-surface);
+  background: rgba(255,255,255,0);
   color: var(--color-text);
 }
 
@@ -150,7 +161,15 @@
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 24px;
+  flex-shrink: 0;
+  padding: 16px var(--modal-padding);
+  border-top: 1px solid var(--color-line);
+  background: rgba(247, 246, 241, 0.96);
+  box-shadow: 0 -12px 32px rgba(31, 37, 40, 0.08);
+}
+
+.nav button {
+  min-width: 180px;
 }
 
 @media (max-width: 760px) {
@@ -173,6 +192,12 @@
 
 @media (max-width: 520px) {
   .nav {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav button {
+    min-width: 0;
+    padding: 0 12px;
   }
 }

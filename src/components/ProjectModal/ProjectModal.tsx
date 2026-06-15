@@ -14,12 +14,14 @@ type ProjectModalProps = {
 
 export function ProjectModal({ projects, project, onClose, onSelectProject }: ProjectModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
   const isOpen = Boolean(project);
   useBodyLock(isOpen);
 
   useEffect(() => {
     if (isOpen) {
       closeButtonRef.current?.focus();
+      scrollAreaRef.current?.scrollTo({ top: 0 });
     }
   }, [isOpen, project?.id]);
 
@@ -60,56 +62,58 @@ export function ProjectModal({ projects, project, onClose, onSelectProject }: Pr
           <X size={22} aria-hidden />
         </button>
 
-        <div className={styles.header}>
-          <span className="eyebrow">{formatDateLabel(project)}</span>
-          <h2 id="project-modal-title">{project.title}</h2>
-          <p>{project.fullDescription ?? project.shortDescription}</p>
-        </div>
-
-        <div className={styles.gallery}>
-          {project.images.map((image, imageIndex) => (
-            <div key={`${project.id}-${imageIndex}`} className={styles.imageSlot}>
-              {image.src ? (
-                <img src={image.src} alt={image.alt} loading="lazy" />
-              ) : (
-                <span>{imageIndex === 0 ? "Основное фото будет добавлено" : "Дополнительное фото будет добавлено"}</span>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.details}>
-          <div>
-            <h3>Что было сделано</h3>
-            <ul>
-              {(project.works ?? ["Данные по составу работ уточняются"]).map((work) => (
-                <li key={work}>{work}</li>
-              ))}
-            </ul>
+        <div className={styles.scrollArea} ref={scrollAreaRef}>
+          <div className={styles.header}>
+            <span className="eyebrow">{formatDateLabel(project)}</span>
+            <h2 id="project-modal-title">{project.title}</h2>
+            <p>{project.fullDescription ?? project.shortDescription}</p>
           </div>
-          <dl>
-            <div>
-              <dt>Тип</dt>
-              <dd>{project.type ?? "Уточняется"}</dd>
-            </div>
-            <div>
-              <dt>Регион</dt>
-              <dd>{project.city ?? project.region ?? "Уточняется"}</dd>
-            </div>
-            <div>
-              <dt>Стоимость</dt>
-              <dd>{project.cost ?? "Данные уточняются"}</dd>
-            </div>
-            <div>
-              <dt>Статус</dt>
-              <dd>{project.status ?? "Уточняется"}</dd>
-            </div>
-          </dl>
-        </div>
 
-        <div className={styles.result}>
-          <h3>Результат</h3>
-          <p>{project.result ?? "Результат будет уточнен после финального описания объекта."}</p>
+          <div className={styles.gallery}>
+            {project.images.map((image, imageIndex) => (
+              <div key={`${project.id}-${imageIndex}`} className={styles.imageSlot}>
+                {image.src ? (
+                  <img src={image.src} alt={image.alt} loading="lazy" />
+                ) : (
+                  <span>{imageIndex === 0 ? "Основное фото будет добавлено" : "Дополнительное фото будет добавлено"}</span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.details}>
+            <div>
+              <h3>Что было сделано</h3>
+              <ul>
+                {(project.works ?? ["Данные по составу работ уточняются"]).map((work) => (
+                  <li key={work}>{work}</li>
+                ))}
+              </ul>
+            </div>
+            <dl>
+              <div>
+                <dt>Тип</dt>
+                <dd>{project.type ?? "Уточняется"}</dd>
+              </div>
+              <div>
+                <dt>Регион</dt>
+                <dd>{project.city ?? project.region ?? "Уточняется"}</dd>
+              </div>
+              <div>
+                <dt>Стоимость</dt>
+                <dd>{project.cost ?? "Данные уточняются"}</dd>
+              </div>
+              <div>
+                <dt>Статус</dt>
+                <dd>{project.status ?? "Уточняется"}</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div className={styles.result}>
+            <h3>Результат</h3>
+            <p>{project.result ?? "Результат будет уточнен после финального описания объекта."}</p>
+          </div>
         </div>
 
         {previous && next && (
