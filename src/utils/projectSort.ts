@@ -6,9 +6,9 @@ export function sortByProjectDate<T extends ArchiveProject | FeaturedProject>(it
     const right = b.sortDate ?? `${b.year ?? 0}-12-01`;
 
     if (left === right) {
-      return (a.sourceNumber ?? 0) - (b.sourceNumber ?? 0);
+      return (b.sourceNumber ?? 0) - (a.sourceNumber ?? 0);
     }
 
-    return left.localeCompare(right);
+    return right.localeCompare(left);
   });
 }
