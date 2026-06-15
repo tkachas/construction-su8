@@ -15,6 +15,12 @@
   padding-left: 28px;
 }
 
+.rail a[data-state="passed"] .dot,
+.rail a[data-state="active"] .dot {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 .line {
   position: absolute;
   top: 18px;
@@ -75,31 +81,71 @@
   scroll-margin-top: 112px;
 }
 
+.mobileCarousel {
+  display: none;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+.mobileDates {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 0 10px;
+  scrollbar-width: thin;
+}
+
+.mobileDates button {
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-weight: 850;
+}
+
+.mobileDates .currentMobileDate {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.mobileCounter {
+  margin: 8px 0 16px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 850;
+  text-align: center;
+}
+
+.mobileSwipeArea {
+  contain: paint;
+  touch-action: pan-y;
+  user-select: none;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.mobileSwipeArea[data-swipe-phase="dragging"],
+.mobileSwipeArea[data-swipe-phase="entering"] {
+  transition: none;
+}
+
+.mobileSwipeArea[data-swipe-phase="settling"] {
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 160ms ease;
+}
+
 @media (max-width: 920px) {
   .timeline {
-    grid-template-columns: 1fr;
-  }
-
-  .rail {
-    position: static;
-    display: flex;
-    min-height: auto;
-    gap: 8px;
-    overflow-x: auto;
-    padding: 0 0 10px;
-  }
-
-  .line,
-  .dot {
     display: none;
   }
 
-  .rail a {
-    flex: 0 0 auto;
-    min-height: 38px;
-    padding: 0 12px;
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius);
-    background: var(--color-surface);
+  .mobileCarousel {
+    display: block;
+    margin-top: 28px;
   }
 }
