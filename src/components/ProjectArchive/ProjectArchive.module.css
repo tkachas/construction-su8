@@ -26,7 +26,7 @@
 
 .filters {
   display: grid;
-  grid-template-columns: minmax(260px, 1.5fr) repeat(4, minmax(130px, 1fr));
+  grid-template-columns: minmax(260px, 1.35fr) minmax(0, 2.65fr);
   gap: 10px;
   margin-top: 34px;
   padding: 12px;
@@ -61,6 +61,20 @@
   border: 0;
   background: transparent;
   padding: 0;
+}
+
+.filterPanel {
+  min-width: 0;
+}
+
+.filterPanel > summary {
+  display: none;
+}
+
+.filterGroup {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
+  gap: 10px;
 }
 
 .filterDropdown {
@@ -299,6 +313,16 @@
   color: #fff;
 }
 
+.ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 40px;
+  color: var(--color-muted);
+  font-weight: 850;
+}
+
 .emptyState {
   margin-top: 16px;
   padding: 24px;
@@ -318,14 +342,69 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .search {
-    grid-column: 1 / -1;
+  .filterGroup {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 720px) {
   .filters {
     grid-template-columns: 1fr;
+  }
+
+  .filterPanel {
+    position: relative;
+  }
+
+  .filterPanel > summary {
+    display: grid;
+    min-height: 46px;
+    align-content: center;
+    gap: 2px;
+    padding: 7px 38px 7px 12px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .filterPanel > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .filterPanel > summary::after {
+    position: absolute;
+    top: 18px;
+    right: 14px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--color-muted);
+    border-bottom: 2px solid var(--color-muted);
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .filterPanel[open] > summary::after {
+    top: 21px;
+    transform: rotate(225deg);
+  }
+
+  .filterPanel > summary span {
+    color: var(--color-muted);
+    font-size: 0.68rem;
+    font-weight: 850;
+    text-transform: uppercase;
+  }
+
+  .filterPanel > summary strong {
+    color: var(--color-text);
+    font-size: 0.95rem;
+  }
+
+  .filterGroup {
+    grid-template-columns: 1fr;
+    margin-top: 10px;
   }
 
   .filterMenu {
@@ -342,33 +421,102 @@
   .mobileList {
     display: grid;
     gap: 12px;
-    min-height: 1540px;
+    align-content: start;
     margin-top: 18px;
   }
 
+  .mobileListPaged {
+    --archive-mobile-card-height: 150px;
+
+    min-height: var(--archive-mobile-list-min-height, 798px);
+  }
+
   .mobileCard {
-    padding: 16px;
     border: 1px solid var(--color-line);
     border-radius: var(--radius);
     background: var(--color-surface);
+    overflow: hidden;
   }
 
-  .mobileCard span {
+  .mobileCard summary {
+    position: relative;
+    display: grid;
+    gap: 9px;
+    min-height: var(--archive-mobile-card-height, auto);
+    padding: 14px 42px 14px 14px;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .mobileCard summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobileCard summary::after {
+    position: absolute;
+    top: 22px;
+    right: 16px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--color-muted);
+    border-bottom: 2px solid var(--color-muted);
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .mobileCard[open] summary {
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .mobileCard[open] summary::after {
+    top: 26px;
+    transform: rotate(225deg);
+  }
+
+  .mobileCard summary > span {
     color: var(--color-muted);
     font-size: 0.82rem;
     font-weight: 800;
   }
 
   .mobileCard h3 {
-    margin: 8px 0 14px;
+    display: -webkit-box;
+    min-height: 2.44em;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 0;
     font-size: 1.08rem;
+    line-height: 1.22;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
-  .mobileCard dl {
+  .mobileFacts {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .mobileFacts span {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    padding: 5px 8px;
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.78rem;
+    font-weight: 780;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobileDetails {
+    display: block;
     margin: 0;
+    padding: 12px 14px 14px;
   }
 
   .mobileCard dt {
@@ -391,11 +539,5 @@
 
   .pagination > button {
     width: 100%;
-  }
-}
-
-@media (max-width: 460px) {
-  .mobileCard dl {
-    grid-template-columns: 1fr;
   }
 }

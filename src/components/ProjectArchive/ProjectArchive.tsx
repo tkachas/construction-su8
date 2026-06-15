@@ -1,7 +1,9 @@
 import { Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import { type CSSProperties, useMemo, useState } from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import type { ArchiveProject } from "../../types/project";
 import { emptyArchiveFilters, filterArchiveProjects, type ArchiveFilters, uniqueOptions } from "../../utils/projectFilters";
+import { sortByProjectDate } from "../../utils/projectSort";
 import styles from "./ProjectArchive.module.css";
 
 type ProjectArchiveProps = {
@@ -19,8 +21,34 @@ type FilterDropdownProps = {
   onOpen: () => void;
 };
 
-const pageSize = 10;
+const desktopPageSize = 10;
+const mobilePageSize = 3;
+const mobileCardClosedHeight = 150;
+const mobileCardGap = 12;
 type FilterKey = Exclude<keyof ArchiveFilters, "query">;
+type PaginationItem = number | "start-ellipsis" | "end-ellipsis";
+
+function getPaginationItems(currentPage: number, pageCount: number): PaginationItem[] {
+  if (pageCount <= 7) {
+    return Array.from({ length: pageCount }, (_, index) => index + 1);
+  }
+
+  const pages = new Set([1, pageCount, currentPage - 1, currentPage, currentPage + 1]);
+  const boundedPages = [...pages].filter((page) => page >= 1 && page <= pageCount).sort((a, b) => a - b);
+  const items: PaginationItem[] = [];
+
+  boundedPages.forEach((page, index) => {
+    const previous = boundedPages[index - 1];
+
+    if (previous && page - previous > 1) {
+      items.push(page - previous === 2 ? previous + 1 : index === 1 ? "start-ellipsis" : "end-ellipsis");
+    }
+
+    items.push(page);
+  });
+
+  return items;
+}
 
 function FilterDropdown({ label, value, placeholder, options, isOpen, onChange, onClose, onOpen }: FilterDropdownProps) {
   return (
@@ -72,10 +100,21 @@ export function ProjectArchive({ projects }: ProjectArchiveProps) {
   const [filters, setFilters] = useState(emptyArchiveFilters);
   const [page, setPage] = useState(1);
   const [openFilter, setOpenFilter] = useState<FilterKey | null>(null);
-  const filteredProjects = useMemo(() => filterArchiveProjects(projects, filters), [projects, filters]);
+  const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 720px)");
+  const pageSize = isMobile ? mobilePageSize : desktopPageSize;
+  const filteredProjects = useMemo(() => sortByProjectDate(filterArchiveProjects(projects, filters)), [projects, filters]);
   const pageCount = Math.max(1, Math.ceil(filteredProjects.length / pageSize));
   const currentPage = Math.min(page, pageCount);
   const paginatedProjects = filteredProjects.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const paginationItems = getPaginationItems(currentPage, pageCount);
+  const activeFilterCount = [filters.year, filters.type, filters.region].filter(Boolean).length;
+  const hasPagination = filteredProjects.length > pageSize;
+  const mobileListStyle = hasPagination
+    ? ({
+        "--archive-mobile-list-min-height": `${mobilePageSize * mobileCardClosedHeight + (mobilePageSize - 1) * mobileCardGap}px`
+      } as CSSProperties)
+    : undefined;
 
   const years = useMemo(() => uniqueOptions(projects.map((project) => project.year ?? project.periodLabel)), [projects]);
   const types = useMemo(() => uniqueOptions(projects.map((project) => project.type)), [projects]);
@@ -97,10 +136,6 @@ export function ProjectArchive({ projects }: ProjectArchiveProps) {
         <div className={styles.heading}>
           <div>
             <h2 className="section-title">Архив реализованных объектов</h2>
-            <p className="section-lead">
-              Полный текущий реестр из предоставленного документа. Финальный список можно уточнить после
-              утверждения заказчиком.
-            </p>
           </div>
           <div className={styles.counter}>
             <strong>{filteredProjects.length}</strong>
@@ -119,38 +154,55 @@ export function ProjectArchive({ projects }: ProjectArchiveProps) {
             />
           </label>
 
-          <FilterDropdown
-            label="Год"
-            value={filters.year}
-            placeholder="Все годы"
-            options={years}
-            isOpen={openFilter === "year"}
-            onChange={(value) => updateFilter("year", value)}
-            onClose={() => closeFilter("year")}
-            onOpen={() => setOpenFilter("year")}
-          />
+          <details
+            className={styles.filterPanel}
+            open={!isMobile || isFilterPanelOpen}
+            onToggle={(event) => {
+              if (isMobile) {
+                setIsFilterPanelOpen(event.currentTarget.open);
+              }
+            }}
+          >
+            <summary>
+              <span>Фильтры</span>
+              <strong>{activeFilterCount ? `${activeFilterCount} активн.` : "Год, тип, регион"}</strong>
+            </summary>
 
-          <FilterDropdown
-            label="Тип"
-            value={filters.type}
-            placeholder="Все типы"
-            options={types}
-            isOpen={openFilter === "type"}
-            onChange={(value) => updateFilter("type", value)}
-            onClose={() => closeFilter("type")}
-            onOpen={() => setOpenFilter("type")}
-          />
+            <div className={styles.filterGroup}>
+              <FilterDropdown
+                label="Год"
+                value={filters.year}
+                placeholder="Все годы"
+                options={years}
+                isOpen={openFilter === "year"}
+                onChange={(value) => updateFilter("year", value)}
+                onClose={() => closeFilter("year")}
+                onOpen={() => setOpenFilter("year")}
+              />
 
-          <FilterDropdown
-            label="Регион"
-            value={filters.region}
-            placeholder="Все регионы"
-            options={regions}
-            isOpen={openFilter === "region"}
-            onChange={(value) => updateFilter("region", value)}
-            onClose={() => closeFilter("region")}
-            onOpen={() => setOpenFilter("region")}
-          />
+              <FilterDropdown
+                label="Тип"
+                value={filters.type}
+                placeholder="Все типы"
+                options={types}
+                isOpen={openFilter === "type"}
+                onChange={(value) => updateFilter("type", value)}
+                onClose={() => closeFilter("type")}
+                onOpen={() => setOpenFilter("type")}
+              />
+
+              <FilterDropdown
+                label="Регион"
+                value={filters.region}
+                placeholder="Все регионы"
+                options={regions}
+                isOpen={openFilter === "region"}
+                onChange={(value) => updateFilter("region", value)}
+                onClose={() => closeFilter("region")}
+                onOpen={() => setOpenFilter("region")}
+              />
+            </div>
+          </details>
         </div>
 
         <div className={styles.tableWrap}>
@@ -192,48 +244,50 @@ export function ProjectArchive({ projects }: ProjectArchiveProps) {
           </table>
         </div>
 
-        <div className={styles.mobileList}>
+        <div className={`${styles.mobileList} ${hasPagination ? styles.mobileListPaged : ""}`} style={mobileListStyle}>
           {paginatedProjects.map((project) => (
-            <article key={project.id} className={styles.mobileCard}>
-              <div>
+            <details key={project.id} className={styles.mobileCard}>
+              <summary>
                 <span>№{project.sourceNumber} · {project.periodLabel ?? project.year}</span>
                 <h3>{project.title}</h3>
-              </div>
-              <dl>
-                <div>
-                  <dt>Тип</dt>
-                  <dd>{project.type}</dd>
+                <div className={styles.mobileFacts} aria-label="Краткие данные объекта">
+                  <span>{project.type}</span>
+                  <span>{project.region}</span>
                 </div>
-                <div>
-                  <dt>Регион</dt>
-                  <dd>{project.region}</dd>
-                </div>
+              </summary>
+              <dl className={styles.mobileDetails}>
                 <div>
                   <dt>Стоимость</dt>
                   <dd>{project.cost ?? "Уточняется"}</dd>
                 </div>
               </dl>
-            </article>
+            </details>
           ))}
         </div>
 
-        {filteredProjects.length > pageSize && (
+        {hasPagination && (
           <nav className={styles.pagination} aria-label="Пагинация архива объектов">
             <button className="button" type="button" disabled={currentPage === 1} onClick={() => setPage(currentPage - 1)}>
               Назад
             </button>
             <div className={styles.pageNumbers}>
-              {Array.from({ length: pageCount }, (_, index) => index + 1).map((pageNumber) => (
-                <button
-                  aria-current={pageNumber === currentPage ? "page" : undefined}
-                  className={pageNumber === currentPage ? styles.currentPage : ""}
-                  key={pageNumber}
-                  type="button"
-                  onClick={() => setPage(pageNumber)}
-                >
-                  {pageNumber}
-                </button>
-              ))}
+              {paginationItems.map((item) =>
+                typeof item === "number" ? (
+                  <button
+                    aria-current={item === currentPage ? "page" : undefined}
+                    className={item === currentPage ? styles.currentPage : ""}
+                    key={item}
+                    type="button"
+                    onClick={() => setPage(item)}
+                  >
+                    {item}
+                  </button>
+                ) : (
+                  <span className={styles.ellipsis} key={item} aria-hidden>
+                    ...
+                  </span>
+                )
+              )}
             </div>
             <button
               className="button"
