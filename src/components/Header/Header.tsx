@@ -4,8 +4,8 @@ import styles from "./Header.module.css";
 
 const navItems = [
   { label: "О компании", href: "#about" },
-  { label: "Объекты", href: "#projects" },
-  { label: "Архив", href: "#archive" },
+  { label: "Витрина", href: "#projects" },
+  { label: "Объекты", href: "#archive" },
   { label: "Контакты", href: "#contacts" }
 ];
 

@@ -11,15 +11,15 @@ export function Hero() {
           <h1>История СУ-8 Белгородстрой через реализованные объекты</h1>
           <p>
             Корпоративное портфолио о масштабе, сроках и результатах: ключевые объекты в таймлайне и
-            полный архив реализованных проектов.
+            полный реестр реализованных проектов.
           </p>
           <div className={styles.actions}>
             <a className="button buttonPrimary" href="#projects">
-              Смотреть объекты
+              Витрина
               <ArrowRight size={18} aria-hidden />
             </a>
             <a className="button" href="#archive">
-              Открыть архив
+              Все объекты
             </a>
           </div>
         </div>

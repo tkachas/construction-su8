@@ -132,14 +132,14 @@ export function ProjectArchive({ projects }: ProjectArchiveProps) {
   return (
     <section className="section" id="archive">
       <div className="container">
-        <span className="eyebrow">Архив</span>
+        <span className="eyebrow">Объекты</span>
         <div className={styles.heading}>
           <div>
-            <h2 className="section-title">Архив реализованных объектов</h2>
+            <h2 className="section-title">Реализованные объекты</h2>
           </div>
           <div className={styles.counter}>
             <strong>{filteredProjects.length}</strong>
-            <span>из {projects.length} объектов</span>
+            <span>из {projects.length}</span>
           </div>
         </div>
 
