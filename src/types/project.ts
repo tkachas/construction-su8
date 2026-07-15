@@ -1,7 +1,27 @@
 export type ProjectImage = {
   src: string;
   alt: string;
+  caption?: string;
+  srcSet?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
   isPlaceholder?: boolean;
+};
+
+export type ProjectContractDetails = {
+  customer?: string;
+  contractNumber?: string;
+  contractDate?: string;
+  contractPrice?: string;
+  completionDate?: string;
+};
+
+export type ProjectStage = ProjectContractDetails & {
+  id: string;
+  title: string;
+  period: string;
+  completedAmount: string;
 };
 
 export type FeaturedProject = {
@@ -15,14 +35,19 @@ export type FeaturedProject = {
   city?: string;
   region?: string;
   type?: string;
+  workType?: string;
   role?: string;
   customer?: string;
   cost?: string;
+  amountLabel?: string;
   duration?: string;
   area?: string;
   status?: string;
   shortDescription: string;
   fullDescription?: string;
+  historicalNote?: string;
+  contractDetails?: ProjectContractDetails;
+  stages?: ProjectStage[];
   works?: string[];
   result?: string;
   images: ProjectImage[];

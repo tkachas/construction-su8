@@ -11,6 +11,12 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, isActive = false, onOpen }: ProjectCardProps) {
   const image = project.images[0];
+  const location = [project.city, project.region].filter(Boolean).join(", ");
+  const facts = [
+    { label: "Формат", value: project.workType ?? project.type },
+    { label: project.amountLabel ?? "Стоимость", value: project.cost },
+    { label: "Статус", value: project.status }
+  ].filter((fact) => fact.value);
 
   return (
     <article className={`${styles.card} ${isActive ? styles.active : ""}`}>
@@ -30,27 +36,25 @@ export function ProjectCard({ project, isActive = false, onOpen }: ProjectCardPr
             <CalendarDays size={16} aria-hidden />
             {formatDateLabel(project)}
           </span>
-          <span>
-            <MapPin size={16} aria-hidden />
-            {project.city ?? project.region ?? "Регион уточняется"}
-          </span>
+          {location && (
+            <span>
+              <MapPin size={16} aria-hidden />
+              {location}
+            </span>
+          )}
         </div>
         <h3>{project.title}</h3>
         <p>{project.shortDescription}</p>
-        <dl className={styles.facts}>
-          <div>
-            <dt>Тип</dt>
-            <dd>{project.type ?? "Уточняется"}</dd>
-          </div>
-          <div>
-            <dt>Стоимость</dt>
-            <dd>{project.cost ?? "Данные уточняются"}</dd>
-          </div>
-          <div>
-            <dt>Статус</dt>
-            <dd>{project.status ?? "Уточняется"}</dd>
-          </div>
-        </dl>
+        {facts.length > 0 && (
+          <dl className={styles.facts}>
+            {facts.map((fact) => (
+              <div key={`${fact.label}-${fact.value}`}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
         <button className="button" type="button" onClick={() => onOpen(project)}>
           Подробнее
           <ArrowUpRight size={17} aria-hidden />
