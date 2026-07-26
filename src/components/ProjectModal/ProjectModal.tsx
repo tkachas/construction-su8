@@ -1,10 +1,12 @@
-import { CalendarDays, ChevronLeft, ChevronRight, FileText, MapPin, X } from "lucide-react";
-import { useEffect, useMemo, useRef } from "react";
+import { CalendarDays, ChevronLeft, ChevronRight, FileText, Info, MapPin, X } from "lucide-react";
+import { useEffect, useId, useMemo, useRef } from "react";
 import { ProjectGallery } from "../ProjectGallery/ProjectGallery";
 import { useBodyLock } from "../../hooks/useBodyLock";
 import type { FeaturedProject, ProjectContractDetails, ProjectStage } from "../../types/project";
 import { formatDateLabel } from "../../utils/formatDateLabel";
 import styles from "./ProjectModal.module.css";
+
+const costNote = "На момент введения в эксплуатацию";
 
 type ProjectModalProps = {
   projects: FeaturedProject[];
@@ -17,6 +19,7 @@ type FactItem = {
   label: string;
   value?: string;
   isStrong?: boolean;
+  note?: string;
 };
 
 const focusableSelector = [
@@ -85,6 +88,7 @@ function StageCard({ stage }: { stage: ProjectStage }) {
 }
 
 export function ProjectModal({ projects, project, onClose, onSelectProject }: ProjectModalProps) {
+  const costNoteId = useId();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
@@ -164,7 +168,7 @@ export function ProjectModal({ projects, project, onClose, onSelectProject }: Pr
       { label: "Период", value: formatDateLabel(project) },
       { label: "Формат работ", value: project.workType },
       { label: "Назначение", value: project.type },
-      { label: project.amountLabel ?? "Стоимость", value: project.cost, isStrong: true },
+      { label: "Стоимость", value: project.cost, isStrong: true, note: costNote },
       { label: "Вместимость", value: project.area },
       { label: "Статус", value: project.status }
     ].filter((fact) => fact.value);
@@ -243,7 +247,24 @@ export function ProjectModal({ projects, project, onClose, onSelectProject }: Pr
               <dl className={styles.factGrid}>
                 {modalData.facts.map((fact) => (
                   <div key={`${fact.label}-${fact.value}`} className={fact.isStrong ? styles.factStrong : undefined}>
-                    <dt>{fact.label}</dt>
+                    <dt>
+                      <span>{fact.label}</span>
+                      {fact.note && (
+                        <span className={styles.factNote}>
+                          <button
+                            type="button"
+                            className={styles.noteTrigger}
+                            aria-label={`Примечание: ${fact.note}`}
+                            aria-describedby={costNoteId}
+                          >
+                            <Info size={12} strokeWidth={2.2} aria-hidden />
+                          </button>
+                          <span className={styles.noteTooltip} id={costNoteId} role="tooltip">
+                            {fact.note}
+                          </span>
+                        </span>
+                      )}
+                    </dt>
                     <dd>{fact.value}</dd>
                   </div>
                 ))}

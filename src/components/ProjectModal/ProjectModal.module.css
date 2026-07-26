@@ -86,7 +86,10 @@
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
   gap: clamp(18px, 3vw, 34px);
   align-items: stretch;
-  max-height: calc(var(--modal-shell-height) - var(--modal-topbar-height) - var(--modal-nav-height) - var(--modal-padding) - var(--modal-padding));
+}
+
+.layout > :first-child {
+  min-height: clamp(360px, 52dvh, 620px);
 }
 
 .passport {
@@ -167,6 +170,74 @@
   text-transform: uppercase;
 }
 
+.factGrid dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.factNote {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: var(--color-muted);
+  text-transform: none;
+}
+
+.noteTrigger {
+  display: inline-flex;
+  width: 17px;
+  height: 17px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: currentColor;
+  cursor: help;
+  opacity: 0.62;
+}
+
+.noteTrigger:hover,
+.noteTrigger:focus-visible {
+  opacity: 1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(198, 103, 39, 0.18);
+}
+
+.noteTooltip {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 8px);
+  z-index: 5;
+  width: max-content;
+  max-width: min(220px, calc(100vw - 48px));
+  padding: 8px 10px;
+  border: 1px solid rgba(31, 37, 40, 0.18);
+  border-radius: 6px;
+  background: rgba(31, 37, 40, 0.96);
+  box-shadow: var(--shadow-soft);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-50% + 4px));
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.factNote:hover .noteTooltip,
+.factNote:focus-within .noteTooltip {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
 .factGrid dd,
 .detailsList dd {
   margin: 0;
@@ -190,7 +261,12 @@
 
 .section,
 .note {
-  margin-top: 22px;
+  margin-top: 35px;
+}
+
+.layout + .section,
+.layout + .note {
+  margin-top: clamp(28px, 3vw, 42px);
 }
 
 .sectionHeader {
@@ -331,7 +407,6 @@
   .layout {
     grid-template-columns: 1fr;
     align-items: start;
-    max-height: none;
   }
 }
 
@@ -371,6 +446,22 @@
     min-height: 100vh;
     max-height: 100vh;
     border-radius: 0;
+  }
+
+  .layout > :first-child {
+    min-height: 330px;
+  }
+
+  .noteTooltip {
+    top: calc(100% + 6px);
+    right: -6px;
+    left: auto;
+    transform: translateY(4px);
+  }
+
+  .factNote:hover .noteTooltip,
+  .factNote:focus-within .noteTooltip {
+    transform: translateY(0);
   }
 
   .factGrid {
@@ -417,5 +508,9 @@
 
   .passportHeader h2 {
     font-size: clamp(1.55rem, 10vw, 2.25rem);
+  }
+
+  .layout > :first-child {
+    min-height: 290px;
   }
 }
