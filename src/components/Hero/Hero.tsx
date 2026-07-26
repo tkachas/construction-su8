@@ -1,4 +1,5 @@
 import { ArrowRight, Building2, Info } from "lucide-react";
+import heroPortfolioImage from "../../assets/hero/portfolio-table-real-projects.webp";
 import { company } from "../../data/company";
 import styles from "./Hero.module.css";
 
@@ -30,7 +31,7 @@ export function Hero() {
             <span>Портфолио объектов</span>
           </div>
           <div className={styles.blueprint}>
-            <span>Фото объектов будут добавлены после передачи материалов</span>
+            <img src={heroPortfolioImage} alt="Фотографии реализованных объектов СУ-8 Белгородстрой на инженерном столе" />
           </div>
           <dl className={styles.metrics}>
             {company.metrics.map((metric, index) => {
