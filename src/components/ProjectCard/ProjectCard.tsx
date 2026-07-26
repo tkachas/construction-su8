@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { memo, useId } from "react";
 import { ArrowUpRight, CalendarDays, Info, MapPin } from "lucide-react";
 import { formatDateLabel } from "../../utils/formatDateLabel";
 import type { FeaturedProject } from "../../types/project";
@@ -12,7 +12,7 @@ type ProjectCardProps = {
   onOpen: (project: FeaturedProject) => void;
 };
 
-export function ProjectCard({ project, isActive = false, onOpen }: ProjectCardProps) {
+export const ProjectCard = memo(function ProjectCard({ project, isActive = false, onOpen }: ProjectCardProps) {
   const costNoteId = useId();
   const image = project.images[0];
   const location = [project.city, project.region].filter(Boolean).join(", ");
@@ -83,4 +83,4 @@ export function ProjectCard({ project, isActive = false, onOpen }: ProjectCardPr
       </div>
     </article>
   );
-}
+});
