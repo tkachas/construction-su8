@@ -107,6 +107,10 @@ export function ProjectArchive({ projects }: ProjectArchiveProps) {
   const pageCount = Math.max(1, Math.ceil(filteredProjects.length / pageSize));
   const currentPage = Math.min(page, pageCount);
   const paginatedProjects = filteredProjects.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const paginatedArchiveItems = paginatedProjects.map((project, index) => ({
+    project,
+    displayNumber: (currentPage - 1) * pageSize + index + 1
+  }));
   const paginationItems = getPaginationItems(currentPage, pageCount);
   const activeFilterCount = [filters.year, filters.type, filters.region].filter(Boolean).length;
   const hasPagination = filteredProjects.length > pageSize;
@@ -218,10 +222,10 @@ export function ProjectArchive({ projects }: ProjectArchiveProps) {
               </tr>
             </thead>
             <tbody>
-              {paginatedProjects.map((project) => (
+              {paginatedArchiveItems.map(({ project, displayNumber }) => (
                 <tr key={project.id}>
                   <td>
-                    <span className={styles.cellText}>{project.sourceNumber}</span>
+                    <span className={styles.cellText}>{displayNumber}</span>
                   </td>
                   <td>
                     <span className={styles.cellText}>{project.periodLabel ?? project.year}</span>
@@ -245,10 +249,10 @@ export function ProjectArchive({ projects }: ProjectArchiveProps) {
         </div>
 
         <div className={`${styles.mobileList} ${hasPagination ? styles.mobileListPaged : ""}`} style={mobileListStyle}>
-          {paginatedProjects.map((project) => (
+          {paginatedArchiveItems.map(({ project, displayNumber }) => (
             <details key={project.id} className={styles.mobileCard}>
               <summary>
-                <span>№{project.sourceNumber} · {project.periodLabel ?? project.year}</span>
+                <span>№{displayNumber} · {project.periodLabel ?? project.year}</span>
                 <h3>{project.title}</h3>
                 <div className={styles.mobileFacts} aria-label="Краткие данные объекта">
                   <span>{project.type}</span>
