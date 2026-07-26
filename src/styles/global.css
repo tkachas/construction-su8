@@ -3,7 +3,11 @@ body,
 #root {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+}
+
+html,
+body {
+  overflow-x: clip;
 }
 
 body {
@@ -54,6 +58,10 @@ html[data-bg="sections"] main > #contacts {
 }
 
 @media (max-width: 920px) {
+  body {
+    overflow-x: hidden;
+  }
+
   body,
   html[data-bg="clean"] body,
   html[data-bg="material"] body {
