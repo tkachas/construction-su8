@@ -1,4 +1,4 @@
-import { ArrowRight, Building2 } from "lucide-react";
+import { ArrowRight, Building2, Info } from "lucide-react";
 import { company } from "../../data/company";
 import styles from "./Hero.module.css";
 
@@ -33,12 +33,33 @@ export function Hero() {
             <span>Фото объектов будут добавлены после передачи материалов</span>
           </div>
           <dl className={styles.metrics}>
-            {company.metrics.map((metric) => (
-              <div key={metric.label}>
-                <dt>{metric.value}</dt>
-                <dd>{metric.label}</dd>
-              </div>
-            ))}
+            {company.metrics.map((metric, index) => {
+              const tooltipId = `company-metric-note-${index}`;
+
+              return (
+                <div key={metric.label}>
+                  <dt>{metric.value}</dt>
+                  <dd>
+                    <span>{metric.label}</span>
+                    {metric.note && (
+                      <span className={styles.metricNote}>
+                        <button
+                          type="button"
+                          className={styles.noteTrigger}
+                          aria-label={`Примечание: ${metric.note}`}
+                          aria-describedby={tooltipId}
+                        >
+                          <Info size={13} strokeWidth={2.2} aria-hidden />
+                        </button>
+                        <span className={styles.noteTooltip} id={tooltipId} role="tooltip">
+                          {metric.note}
+                        </span>
+                      </span>
+                    )}
+                  </dd>
+                </div>
+              );
+            })}
           </dl>
         </div>
       </div>
