@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1fr);
   gap: 22px;
+  height: 100%;
   padding: 20px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
@@ -64,6 +65,10 @@
   align-items: flex-start;
 }
 
+.body > button {
+  margin-top: auto;
+}
+
 .meta {
   display: flex;
   flex-wrap: wrap;
@@ -114,10 +119,74 @@
 }
 
 .facts dt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: var(--color-muted);
   font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.factNote {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: var(--color-muted);
+  text-transform: none;
+}
+
+.noteTrigger {
+  display: inline-flex;
+  width: 17px;
+  height: 17px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: currentColor;
+  cursor: help;
+  opacity: 0.62;
+}
+
+.noteTrigger:hover,
+.noteTrigger:focus-visible {
+  opacity: 1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(198, 103, 39, 0.18);
+}
+
+.noteTooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: -10px;
+  z-index: 5;
+  width: max-content;
+  max-width: min(220px, calc(100vw - 48px));
+  padding: 8px 10px;
+  border: 1px solid rgba(31, 37, 40, 0.18);
+  border-radius: 6px;
+  background: rgba(31, 37, 40, 0.96);
+  box-shadow: var(--shadow-soft);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.factNote:hover .noteTooltip,
+.factNote:focus-within .noteTooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .facts dd {

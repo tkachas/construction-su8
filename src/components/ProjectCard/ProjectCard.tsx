@@ -1,7 +1,10 @@
-import { ArrowUpRight, CalendarDays, MapPin } from "lucide-react";
+import { useId } from "react";
+import { ArrowUpRight, CalendarDays, Info, MapPin } from "lucide-react";
 import { formatDateLabel } from "../../utils/formatDateLabel";
 import type { FeaturedProject } from "../../types/project";
 import styles from "./ProjectCard.module.css";
+
+const costNote = "На момент введения в эксплуатацию";
 
 type ProjectCardProps = {
   project: FeaturedProject;
@@ -10,11 +13,12 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, isActive = false, onOpen }: ProjectCardProps) {
+  const costNoteId = useId();
   const image = project.images[0];
   const location = [project.city, project.region].filter(Boolean).join(", ");
   const facts = [
     { label: "Формат", value: project.workType ?? project.type },
-    { label: project.amountLabel ?? "Стоимость", value: project.cost },
+    { label: "Стоимость", value: project.cost, note: costNote },
     { label: "Статус", value: project.status }
   ].filter((fact) => fact.value);
 
@@ -49,7 +53,24 @@ export function ProjectCard({ project, isActive = false, onOpen }: ProjectCardPr
           <dl className={styles.facts}>
             {facts.map((fact) => (
               <div key={`${fact.label}-${fact.value}`}>
-                <dt>{fact.label}</dt>
+                <dt>
+                  <span>{fact.label}</span>
+                  {fact.note && (
+                    <span className={styles.factNote}>
+                      <button
+                        type="button"
+                        className={styles.noteTrigger}
+                        aria-label={`Примечание: ${fact.note}`}
+                        aria-describedby={costNoteId}
+                      >
+                        <Info size={12} strokeWidth={2.2} aria-hidden />
+                      </button>
+                      <span className={styles.noteTooltip} id={costNoteId} role="tooltip">
+                        {fact.note}
+                      </span>
+                    </span>
+                  )}
+                </dt>
                 <dd>{fact.value}</dd>
               </div>
             ))}
