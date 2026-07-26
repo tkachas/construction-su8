@@ -26,7 +26,16 @@ export const ProjectCard = memo(function ProjectCard({ project, isActive = false
     <article className={`${styles.card} ${isActive ? styles.active : ""}`}>
       <div className={styles.media}>
         {image?.src ? (
-          <img src={image.src} alt={image.alt} loading="lazy" />
+          <img
+            src={image.src}
+            srcSet={image.srcSet}
+            sizes={image.sizes ?? "(max-width: 820px) calc(100vw - 40px), (max-width: 1120px) 42vw, 360px"}
+            width={image.width}
+            height={image.height}
+            alt={image.alt}
+            loading="lazy"
+            decoding="async"
+          />
         ) : (
           <div className={styles.placeholder} role="img" aria-label={image?.alt ?? "Фото будет добавлено"}>
             <span>Фото будет добавлено</span>

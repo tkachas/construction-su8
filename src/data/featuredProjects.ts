@@ -151,6 +151,174 @@ const school48Images: ProjectImage[] = [
   }
 ];
 
+const school37FacadePreview = new URL("../assets/object-photos/4/IMG_0174-preview.webp", import.meta.url).href;
+const school37Facade = new URL("../assets/object-photos/4/IMG_0174.webp", import.meta.url).href;
+const school37SportsGroundPreview = new URL("../assets/object-photos/4/IMG_0172-preview.webp", import.meta.url).href;
+const school37SportsGround = new URL("../assets/object-photos/4/IMG_0172.webp", import.meta.url).href;
+const school37SideTerritoryPreview = new URL("../assets/object-photos/4/IMG_0173-preview.webp", import.meta.url).href;
+const school37SideTerritory = new URL("../assets/object-photos/4/IMG_0173.webp", import.meta.url).href;
+const school37EntranceCanopyPreview = new URL("../assets/object-photos/4/IMG_4756-preview.webp", import.meta.url).href;
+const school37EntranceCanopy = new URL("../assets/object-photos/4/IMG_4756.webp", import.meta.url).href;
+const school37CorridorPreview = new URL("../assets/object-photos/4/IMG_4765-preview.webp", import.meta.url).href;
+const school37Corridor = new URL("../assets/object-photos/4/IMG_4765.webp", import.meta.url).href;
+const school37SecurityAreaPreview = new URL("../assets/object-photos/4/IMG_4766-preview.webp", import.meta.url).href;
+const school37SecurityArea = new URL("../assets/object-photos/4/IMG_4766.webp", import.meta.url).href;
+const school37LobbyPreview = new URL("../assets/object-photos/4/IMG_4767-preview.webp", import.meta.url).href;
+const school37Lobby = new URL("../assets/object-photos/4/IMG_4767.webp", import.meta.url).href;
+
+const school37Images: ProjectImage[] = [
+  {
+    src: school37FacadePreview,
+    srcSet: `${school37FacadePreview} 960w, ${school37Facade} 1600w`,
+    alt: "МБОУ СОШ № 37: обновленный главный фасад и входная группа после капитального ремонта",
+    caption: "Главный фасад",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: school37SportsGroundPreview,
+    srcSet: `${school37SportsGroundPreview} 960w, ${school37SportsGround} 1600w`,
+    alt: "МБОУ СОШ № 37: спортивная площадка и благоустроенная территория",
+    caption: "Спортивная территория",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: school37SideTerritoryPreview,
+    srcSet: `${school37SideTerritoryPreview} 960w, ${school37SideTerritory} 1600w`,
+    alt: "МБОУ СОШ № 37: боковой фасад и обновленная территория школы",
+    caption: "Боковой фасад",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: school37EntranceCanopyPreview,
+    srcSet: `${school37EntranceCanopyPreview} 960w, ${school37EntranceCanopy} 1600w`,
+    alt: "МБОУ СОШ № 37: крытая входная зона и переходы после ремонта",
+    caption: "Входная зона",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: school37CorridorPreview,
+    srcSet: `${school37CorridorPreview} 960w, ${school37Corridor} 1600w`,
+    alt: "МБОУ СОШ № 37: обновленный школьный коридор",
+    caption: "Коридор",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: school37SecurityAreaPreview,
+    srcSet: `${school37SecurityAreaPreview} 960w, ${school37SecurityArea} 1600w`,
+    alt: "МБОУ СОШ № 37: входной контроль и зона безопасности",
+    caption: "Входной контроль",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: school37LobbyPreview,
+    srcSet: `${school37LobbyPreview} 960w, ${school37Lobby} 1600w`,
+    alt: "МБОУ СОШ № 37: холл с турникетами после капитального ремонта",
+    caption: "Холл",
+    width: 1600,
+    height: 1200
+  }
+];
+
+const agrotechnicalCollegeMainFacadePreview = new URL("../assets/object-photos/5/IMG_0292-preview.webp", import.meta.url).href;
+const agrotechnicalCollegeMainFacade = new URL("../assets/object-photos/5/IMG_0292.webp", import.meta.url).href;
+const agrotechnicalCollegeLandscapeFacadePreview = new URL("../assets/object-photos/5/IMG_0295-preview.webp", import.meta.url).href;
+const agrotechnicalCollegeLandscapeFacade = new URL("../assets/object-photos/5/IMG_0295.webp", import.meta.url).href;
+const agrotechnicalCollegeEntrancePreview = new URL("../assets/object-photos/5/IMG_0297-preview.webp", import.meta.url).href;
+const agrotechnicalCollegeEntrance = new URL("../assets/object-photos/5/IMG_0297.webp", import.meta.url).href;
+const agrotechnicalCollegePassagePreview = new URL("../assets/object-photos/5/IMG_0298-preview.webp", import.meta.url).href;
+const agrotechnicalCollegePassage = new URL("../assets/object-photos/5/IMG_0298.webp", import.meta.url).href;
+const agrotechnicalCollegeCourtyardWidePreview = new URL("../assets/object-photos/5/IMG_0299-preview.webp", import.meta.url).href;
+const agrotechnicalCollegeCourtyardWide = new URL("../assets/object-photos/5/IMG_0299.webp", import.meta.url).href;
+const agrotechnicalCollegeCourtyardWingPreview = new URL("../assets/object-photos/5/IMG_0300-preview.webp", import.meta.url).href;
+const agrotechnicalCollegeCourtyardWing = new URL("../assets/object-photos/5/IMG_0300.webp", import.meta.url).href;
+const agrotechnicalCollegeCourtyardTreePreview = new URL("../assets/object-photos/5/IMG_0301-preview.webp", import.meta.url).href;
+const agrotechnicalCollegeCourtyardTree = new URL("../assets/object-photos/5/IMG_0301.webp", import.meta.url).href;
+const agrotechnicalCollegeCourtyardFacadePreview = new URL("../assets/object-photos/5/IMG_0302-preview.webp", import.meta.url).href;
+const agrotechnicalCollegeCourtyardFacade = new URL("../assets/object-photos/5/IMG_0302.webp", import.meta.url).href;
+const agrotechnicalCollegeSideFacadePreview = new URL("../assets/object-photos/5/IMG_0304-preview.webp", import.meta.url).href;
+const agrotechnicalCollegeSideFacade = new URL("../assets/object-photos/5/IMG_0304.webp", import.meta.url).href;
+
+const agrotechnicalCollegeImages: ProjectImage[] = [
+  {
+    src: agrotechnicalCollegeMainFacadePreview,
+    srcSet: `${agrotechnicalCollegeMainFacadePreview} 960w, ${agrotechnicalCollegeMainFacade} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: главный фасад учебного корпуса после капитального ремонта",
+    caption: "Главный фасад",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: agrotechnicalCollegeLandscapeFacadePreview,
+    srcSet: `${agrotechnicalCollegeLandscapeFacadePreview} 960w, ${agrotechnicalCollegeLandscapeFacade} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: фасад и благоустроенная территория перед корпусом",
+    caption: "Фасад и территория",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: agrotechnicalCollegeEntrancePreview,
+    srcSet: `${agrotechnicalCollegeEntrancePreview} 960w, ${agrotechnicalCollegeEntrance} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: входная группа учебного корпуса",
+    caption: "Входная группа",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: agrotechnicalCollegePassagePreview,
+    srcSet: `${agrotechnicalCollegePassagePreview} 960w, ${agrotechnicalCollegePassage} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: крытый проход к учебному корпусу",
+    caption: "Крытый проход",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: agrotechnicalCollegeCourtyardWidePreview,
+    srcSet: `${agrotechnicalCollegeCourtyardWidePreview} 960w, ${agrotechnicalCollegeCourtyardWide} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: внутренний двор и обновленный фасад корпуса",
+    caption: "Внутренний двор",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: agrotechnicalCollegeCourtyardWingPreview,
+    srcSet: `${agrotechnicalCollegeCourtyardWingPreview} 960w, ${agrotechnicalCollegeCourtyardWing} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: двор и боковой корпус после ремонта",
+    caption: "Двор корпуса",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: agrotechnicalCollegeCourtyardTreePreview,
+    srcSet: `${agrotechnicalCollegeCourtyardTreePreview} 960w, ${agrotechnicalCollegeCourtyardTree} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: учебный корпус со стороны внутреннего двора",
+    caption: "Корпус со двора",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: agrotechnicalCollegeCourtyardFacadePreview,
+    srcSet: `${agrotechnicalCollegeCourtyardFacadePreview} 960w, ${agrotechnicalCollegeCourtyardFacade} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: протяженный фасад во внутреннем дворе",
+    caption: "Фасад во дворе",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: agrotechnicalCollegeSideFacadePreview,
+    srcSet: `${agrotechnicalCollegeSideFacadePreview} 960w, ${agrotechnicalCollegeSideFacade} 1600w`,
+    alt: "Старооскольский агротехнологический техникум: боковой фасад учебного корпуса",
+    caption: "Боковой фасад",
+    width: 1600,
+    height: 2133
+  }
+];
+
 const contract = (details: ProjectContractDetails): ProjectContractDetails => details;
 
 const stage = (details: ProjectStage): ProjectStage => details;
@@ -257,8 +425,7 @@ export const featuredProjects: FeaturedProject[] = [
         completionDate: "23.07.2024"
       })
     ],
-    images: placeholderImages("МБОУ СОШ № 37"),
-    isPlaceholder: true
+    images: school37Images
   },
   {
     id: "featured-agrotechnical-college-2023",
@@ -283,8 +450,7 @@ export const featuredProjects: FeaturedProject[] = [
       contractPrice: "266 794 643 руб.",
       completionDate: "30.09.2023"
     }),
-    images: placeholderImages("Старооскольский агротехнологический техникум"),
-    isPlaceholder: true
+    images: agrotechnicalCollegeImages
   },
   {
     id: "featured-south-west-stadium-2022",
