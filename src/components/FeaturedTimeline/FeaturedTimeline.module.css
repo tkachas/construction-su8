@@ -120,23 +120,38 @@
   text-align: center;
 }
 
-.mobileSwipeArea {
+.mobileViewport {
   contain: paint;
-  touch-action: pan-y;
-  user-select: none;
-  backface-visibility: hidden;
-  will-change: transform, opacity;
+  overflow: hidden;
+  touch-action: pan-y pinch-zoom;
 }
 
-.mobileSwipeArea[data-swipe-phase="dragging"],
-.mobileSwipeArea[data-swipe-phase="entering"] {
+.mobileTrack {
+  display: flex;
+  align-items: stretch;
+  backface-visibility: hidden;
+  touch-action: pan-y pinch-zoom;
+  will-change: transform;
+}
+
+.mobileSlide {
+  backface-visibility: hidden;
+  contain: paint;
+  display: flex;
+  align-items: stretch;
+  flex: 0 0 100%;
+  min-width: 0;
+  transform: translateZ(0);
+}
+
+.mobileSlide > article {
+  width: 100%;
+  box-shadow: none;
   transition: none;
 }
 
-.mobileSwipeArea[data-swipe-phase="settling"] {
-  transition:
-    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 160ms ease;
+.mobileSlide > article:hover {
+  transform: none;
 }
 
 @media (max-width: 920px) {
