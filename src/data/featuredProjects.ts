@@ -319,6 +319,232 @@ const agrotechnicalCollegeImages: ProjectImage[] = [
   }
 ];
 
+const southWestStadiumTrackPreview = new URL("../assets/object-photos/6/IMG_0151-preview.webp", import.meta.url).href;
+const southWestStadiumTrack = new URL("../assets/object-photos/6/IMG_0151.webp", import.meta.url).href;
+const southWestStadiumFieldPreview = new URL("../assets/object-photos/6/IMG_0152-preview.webp", import.meta.url).href;
+const southWestStadiumField = new URL("../assets/object-photos/6/IMG_0152.webp", import.meta.url).href;
+const southWestStadiumTurfPreview = new URL("../assets/object-photos/6/IMG_0150-preview.webp", import.meta.url).href;
+const southWestStadiumTurf = new URL("../assets/object-photos/6/IMG_0150.webp", import.meta.url).href;
+const southWestStadiumLightingPreview = new URL("../assets/object-photos/6/IMG_0148-preview.webp", import.meta.url).href;
+const southWestStadiumLighting = new URL("../assets/object-photos/6/IMG_0148.webp", import.meta.url).href;
+const southWestStadiumTerritoryPreview = new URL("../assets/object-photos/6/IMG_0149-preview.webp", import.meta.url).href;
+const southWestStadiumTerritory = new URL("../assets/object-photos/6/IMG_0149.webp", import.meta.url).href;
+
+const southWestStadiumImages: ProjectImage[] = [
+  {
+    src: southWestStadiumTrackPreview,
+    srcSet: `${southWestStadiumTrackPreview} 960w, ${southWestStadiumTrack} 1600w`,
+    alt: "Стадион в микрорайоне Юго-Западный: футбольное поле и беговые дорожки после монтажа покрытий",
+    caption: "Поле и беговые дорожки",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: southWestStadiumFieldPreview,
+    srcSet: `${southWestStadiumFieldPreview} 960w, ${southWestStadiumField} 1600w`,
+    alt: "Стадион в микрорайоне Юго-Западный: искусственное покрытие футбольного поля",
+    caption: "Футбольное поле",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: southWestStadiumTurfPreview,
+    srcSet: `${southWestStadiumTurfPreview} 960w, ${southWestStadiumTurf} 1600w`,
+    alt: "Стадион в микрорайоне Юго-Западный: разметка и искусственный газон",
+    caption: "Искусственное покрытие",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: southWestStadiumLightingPreview,
+    srcSet: `${southWestStadiumLightingPreview} 960w, ${southWestStadiumLighting} 1600w`,
+    alt: "Стадион в микрорайоне Юго-Западный: беговые дорожки и мачты освещения",
+    caption: "Дорожки и освещение",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: southWestStadiumTerritoryPreview,
+    srcSet: `${southWestStadiumTerritoryPreview} 960w, ${southWestStadiumTerritory} 1600w`,
+    alt: "Стадион в микрорайоне Юго-Западный: спортивная территория и освещение стадиона",
+    caption: "Территория стадиона",
+    width: 1600,
+    height: 2133
+  }
+];
+
+const technologyDesignCollegeMainFacadePreview = new URL("../assets/object-photos/7/IMG_0269-preview.webp", import.meta.url).href;
+const technologyDesignCollegeMainFacade = new URL("../assets/object-photos/7/IMG_0269.webp", import.meta.url).href;
+const technologyDesignCollegeFrontFacadePreview = new URL("../assets/object-photos/7/IMG_0272-preview.webp", import.meta.url).href;
+const technologyDesignCollegeFrontFacade = new URL("../assets/object-photos/7/IMG_0272.webp", import.meta.url).href;
+const technologyDesignCollegeSideFacadePreview = new URL("../assets/object-photos/7/IMG_0265-preview.webp", import.meta.url).href;
+const technologyDesignCollegeSideFacade = new URL("../assets/object-photos/7/IMG_0265.webp", import.meta.url).href;
+const technologyDesignCollegeYardFacadePreview = new URL("../assets/object-photos/7/IMG_0266-preview.webp", import.meta.url).href;
+const technologyDesignCollegeYardFacade = new URL("../assets/object-photos/7/IMG_0266.webp", import.meta.url).href;
+const technologyDesignCollegeRoadFacadePreview = new URL("../assets/object-photos/7/IMG_0279-preview.webp", import.meta.url).href;
+const technologyDesignCollegeRoadFacade = new URL("../assets/object-photos/7/IMG_0279.webp", import.meta.url).href;
+const technologyDesignCollegeWorkshopEntrancePreview = new URL("../assets/object-photos/7/IMG_0276-preview.webp", import.meta.url).href;
+const technologyDesignCollegeWorkshopEntrance = new URL("../assets/object-photos/7/IMG_0276.webp", import.meta.url).href;
+const technologyDesignCollegeTerritoryPreview = new URL("../assets/object-photos/7/IMG_0277-preview.webp", import.meta.url).href;
+const technologyDesignCollegeTerritory = new URL("../assets/object-photos/7/IMG_0277.webp", import.meta.url).href;
+const technologyDesignCollegeMainEntrancePreview = new URL("../assets/object-photos/7/IMG_0270-preview.webp", import.meta.url).href;
+const technologyDesignCollegeMainEntrance = new URL("../assets/object-photos/7/IMG_0270.webp", import.meta.url).href;
+const technologyDesignCollegeInfoStandPreview = new URL("../assets/object-photos/7/IMG_0271-preview.webp", import.meta.url).href;
+const technologyDesignCollegeInfoStand = new URL("../assets/object-photos/7/IMG_0271.webp", import.meta.url).href;
+
+const technologyDesignCollegeImages: ProjectImage[] = [
+  {
+    src: technologyDesignCollegeMainFacadePreview,
+    srcSet: `${technologyDesignCollegeMainFacadePreview} 960w, ${technologyDesignCollegeMainFacade} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: главный фасад учебного корпуса после капитального ремонта",
+    caption: "Главный фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: technologyDesignCollegeFrontFacadePreview,
+    srcSet: `${technologyDesignCollegeFrontFacadePreview} 960w, ${technologyDesignCollegeFrontFacade} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: обновленный фасад и входная группа корпуса",
+    caption: "Фасад и вход",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: technologyDesignCollegeSideFacadePreview,
+    srcSet: `${technologyDesignCollegeSideFacadePreview} 960w, ${technologyDesignCollegeSideFacade} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: боковой фасад учебного корпуса",
+    caption: "Боковой фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: technologyDesignCollegeYardFacadePreview,
+    srcSet: `${technologyDesignCollegeYardFacadePreview} 960w, ${technologyDesignCollegeYardFacade} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: корпус со стороны территории техникума",
+    caption: "Корпус со стороны двора",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: technologyDesignCollegeRoadFacadePreview,
+    srcSet: `${technologyDesignCollegeRoadFacadePreview} 960w, ${technologyDesignCollegeRoadFacade} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: протяженный фасад вдоль проезда",
+    caption: "Фасад вдоль проезда",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: technologyDesignCollegeWorkshopEntrancePreview,
+    srcSet: `${technologyDesignCollegeWorkshopEntrancePreview} 960w, ${technologyDesignCollegeWorkshopEntrance} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: вход в обновленный корпус мастерских",
+    caption: "Корпус мастерских",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: technologyDesignCollegeTerritoryPreview,
+    srcSet: `${technologyDesignCollegeTerritoryPreview} 960w, ${technologyDesignCollegeTerritory} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: территория рядом с корпусом после ремонта",
+    caption: "Территория объекта",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: technologyDesignCollegeMainEntrancePreview,
+    srcSet: `${technologyDesignCollegeMainEntrancePreview} 960w, ${technologyDesignCollegeMainEntrance} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: главный вход в учебный корпус",
+    caption: "Главный вход",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: technologyDesignCollegeInfoStandPreview,
+    srcSet: `${technologyDesignCollegeInfoStandPreview} 960w, ${technologyDesignCollegeInfoStand} 1600w`,
+    alt: "Старооскольский техникум технологий и дизайна: информационный стенд проекта капитального ремонта",
+    caption: "Информационный стенд",
+    width: 1600,
+    height: 2133
+  }
+];
+
+const polytechnicCollegeFacadePreview = new URL("../assets/object-photos/8/IMG_0169-preview.webp", import.meta.url).href;
+const polytechnicCollegeFacade = new URL("../assets/object-photos/8/IMG_0169.webp", import.meta.url).href;
+
+const polytechnicCollegeImages: ProjectImage[] = [
+  {
+    src: polytechnicCollegeFacadePreview,
+    srcSet: `${polytechnicCollegeFacadePreview} 960w, ${polytechnicCollegeFacade} 1600w`,
+    alt: "Белгородский политехнический колледж: обновленный фасад корпуса после капитального ремонта",
+    caption: "Фасад корпуса",
+    width: 1600,
+    height: 2133
+  }
+];
+
+const cityHospital1MainFacadePreview = new URL("../assets/object-photos/9/IMG_0286-preview.webp", import.meta.url).href;
+const cityHospital1MainFacade = new URL("../assets/object-photos/9/IMG_0286.webp", import.meta.url).href;
+const cityHospital1CornerFacadePreview = new URL("../assets/object-photos/9/IMG_0290-preview.webp", import.meta.url).href;
+const cityHospital1CornerFacade = new URL("../assets/object-photos/9/IMG_0290.webp", import.meta.url).href;
+const cityHospital1FrontTerritoryPreview = new URL("../assets/object-photos/9/IMG_0282-preview.webp", import.meta.url).href;
+const cityHospital1FrontTerritory = new URL("../assets/object-photos/9/IMG_0282.webp", import.meta.url).href;
+const cityHospital1LongFacadePreview = new URL("../assets/object-photos/9/IMG_0285-preview.webp", import.meta.url).href;
+const cityHospital1LongFacade = new URL("../assets/object-photos/9/IMG_0285.webp", import.meta.url).href;
+const cityHospital1EntrancePreview = new URL("../assets/object-photos/9/IMG_0288-preview.webp", import.meta.url).href;
+const cityHospital1Entrance = new URL("../assets/object-photos/9/IMG_0288.webp", import.meta.url).href;
+const cityHospital1PassagePreview = new URL("../assets/object-photos/9/IMG_0291-preview.webp", import.meta.url).href;
+const cityHospital1Passage = new URL("../assets/object-photos/9/IMG_0291.webp", import.meta.url).href;
+
+const cityHospital1Images: ProjectImage[] = [
+  {
+    src: cityHospital1MainFacadePreview,
+    srcSet: `${cityHospital1MainFacadePreview} 960w, ${cityHospital1MainFacade} 1600w`,
+    alt: "Городская больница № 1 г. Старый Оскол: обновленный фасад главного больничного корпуса",
+    caption: "Главный фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital1CornerFacadePreview,
+    srcSet: `${cityHospital1CornerFacadePreview} 960w, ${cityHospital1CornerFacade} 1600w`,
+    alt: "Городская больница № 1 г. Старый Оскол: общий вид главного корпуса после капитального ремонта",
+    caption: "Общий вид корпуса",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: cityHospital1FrontTerritoryPreview,
+    srcSet: `${cityHospital1FrontTerritoryPreview} 960w, ${cityHospital1FrontTerritory} 1600w`,
+    alt: "Городская больница № 1 г. Старый Оскол: фасад и территория перед главным корпусом",
+    caption: "Фасад и территория",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital1LongFacadePreview,
+    srcSet: `${cityHospital1LongFacadePreview} 960w, ${cityHospital1LongFacade} 1600w`,
+    alt: "Городская больница № 1 г. Старый Оскол: протяженный фасад главного больничного корпуса",
+    caption: "Протяженный фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital1EntrancePreview,
+    srcSet: `${cityHospital1EntrancePreview} 960w, ${cityHospital1Entrance} 1600w`,
+    alt: "Городская больница № 1 г. Старый Оскол: входная группа главного корпуса",
+    caption: "Входная группа",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital1PassagePreview,
+    srcSet: `${cityHospital1PassagePreview} 960w, ${cityHospital1Passage} 1600w`,
+    alt: "Городская больница № 1 г. Старый Оскол: переход между корпусами",
+    caption: "Переход между корпусами",
+    width: 1600,
+    height: 2133
+  }
+];
+
 const contract = (details: ProjectContractDetails): ProjectContractDetails => details;
 
 const stage = (details: ProjectStage): ProjectStage => details;
@@ -475,8 +701,7 @@ export const featuredProjects: FeaturedProject[] = [
       contractPrice: "106 826 459 руб.",
       completionDate: "20.10.2022"
     }),
-    images: placeholderImages("Стадион в мкр. Юго-Западный"),
-    isPlaceholder: true
+    images: southWestStadiumImages
   },
   {
     id: "featured-technology-design-college-2021",
@@ -515,8 +740,7 @@ export const featuredProjects: FeaturedProject[] = [
         completionDate: "22.06.2021"
       })
     ],
-    images: placeholderImages("Старооскольский техникум технологий и дизайна"),
-    isPlaceholder: true
+    images: technologyDesignCollegeImages
   },
   {
     id: "featured-polytechnic-college-2019-2020",
@@ -565,8 +789,7 @@ export const featuredProjects: FeaturedProject[] = [
         completionDate: "14 и 30.12.2020"
       })
     ],
-    images: placeholderImages("Белгородский политехнический колледж"),
-    isPlaceholder: true
+    images: polytechnicCollegeImages
   },
   {
     id: "featured-city-hospital-1-2019-2022",
@@ -615,8 +838,7 @@ export const featuredProjects: FeaturedProject[] = [
         completionDate: "20.06.2022"
       })
     ],
-    images: placeholderImages("Городская больница № 1 г. Старый Оскол"),
-    isPlaceholder: true
+    images: cityHospital1Images
   },
   {
     id: "featured-city-hospital-2-polyclinic-2018-2019",
