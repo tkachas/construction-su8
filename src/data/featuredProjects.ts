@@ -1,4 +1,4 @@
-import type { FeaturedProject, ProjectContractDetails, ProjectStage } from "../types/project";
+import type { FeaturedProject, ProjectContractDetails, ProjectImage, ProjectStage } from "../types/project";
 
 const UKS_CUSTOMER = "ОГБУ «Управление капитального строительства Белгородской области»";
 
@@ -23,6 +23,134 @@ const placeholderImages = (title: string) => [
   }
 ];
 
+const livnySocialCareImages: ProjectImage[] = [
+  {
+    src: new URL("../assets/object-photos/1/2-straight.webp", import.meta.url).href,
+    alt: "Ливенский дом социального обслуживания: главный вход после ремонта",
+    caption: "Главный вход",
+    width: 1280,
+    height: 1707
+  },
+  {
+    src: new URL("../assets/object-photos/1/1.webp", import.meta.url).href,
+    alt: "Ливенский дом социального обслуживания: основной фасад здания",
+    caption: "Основной фасад",
+    width: 1280,
+    height: 1707
+  },
+  {
+    src: new URL("../assets/object-photos/1/6.webp", import.meta.url).href,
+    alt: "Ливенский дом социального обслуживания: благоустроенная территория",
+    caption: "Благоустройство территории",
+    width: 1280,
+    height: 1707
+  },
+  {
+    src: new URL("../assets/object-photos/1/5.webp", import.meta.url).href,
+    alt: "Ливенский дом социального обслуживания: интерьер коридора после ремонта",
+    caption: "Интерьер",
+    width: 1280,
+    height: 1707
+  }
+];
+
+const adaptiveSportsCenterImages: ProjectImage[] = [
+  {
+    src: new URL("../assets/object-photos/2/IMG_0135.webp", import.meta.url).href,
+    alt: "Спортивный центр Вершина: входная группа и вывеска",
+    caption: "Главный вход",
+    width: 1257,
+    height: 1800
+  },
+  {
+    src: new URL("../assets/object-photos/2/IMG_0136.webp", import.meta.url).href,
+    alt: "Спортивный центр Вершина: навигационный знак и территория объекта",
+    caption: "Территория объекта",
+    width: 1800,
+    height: 1350
+  },
+  {
+    src: new URL("../assets/object-photos/2/IMG_0139.webp", import.meta.url).href,
+    alt: "Спортивный центр Вершина: фасад спортивного блока",
+    caption: "Фасад спортивного блока",
+    width: 1800,
+    height: 1350
+  },
+  {
+    src: new URL("../assets/object-photos/2/IMG_0144.webp", import.meta.url).href,
+    alt: "Спортивный центр Вершина: просторный входной холл",
+    caption: "Входной холл",
+    width: 1800,
+    height: 1350
+  },
+  {
+    src: new URL("../assets/object-photos/2/IMG_0140.webp", import.meta.url).href,
+    alt: "Спортивный центр Вершина: внутренняя беговая зона и навигация по залам",
+    caption: "Навигация по залам",
+    width: 1800,
+    height: 1350
+  },
+  {
+    src: new URL("../assets/object-photos/2/IMG_0146.webp", import.meta.url).href,
+    alt: "Спортивный центр Вершина: универсальный спортивный зал",
+    caption: "Универсальный спортивный зал",
+    width: 1800,
+    height: 1350
+  }
+];
+
+const school48Images: ProjectImage[] = [
+  {
+    src: new URL("../assets/object-photos/3/IMG_010222-enhanced.webp", import.meta.url).href,
+    alt: "МБОУ СОШ № 48: главный вход после капитального ремонта",
+    caption: "Главный вход",
+    width: 1126,
+    height: 1397
+  },
+  {
+    src: new URL("../assets/object-photos/3/IMG_0099.webp", import.meta.url).href,
+    alt: "МБОУ СОШ № 48: обновленный фасад и школьная территория",
+    caption: "Фасад и территория",
+    width: 1350,
+    height: 1800
+  },
+  {
+    src: new URL("../assets/object-photos/3/IMG_0103.webp", import.meta.url).href,
+    alt: "МБОУ СОШ № 48: просторный холл после ремонта",
+    caption: "Холл",
+    width: 1800,
+    height: 1350
+  },
+  {
+    src: new URL("../assets/object-photos/3/IMG_0106.webp", import.meta.url).href,
+    alt: "МБОУ СОШ № 48: актовый зал",
+    caption: "Актовый зал",
+    width: 1350,
+    height: 1800
+  },
+  {
+    src: new URL("../assets/object-photos/3/IMG_0109.webp", import.meta.url).href,
+    alt: "МБОУ СОШ № 48: спортивный зал",
+    caption: "Спортивный зал",
+    width: 1800,
+    height: 1350
+  },
+  {
+    src: new URL("../assets/object-photos/3/IMG_0111.webp", import.meta.url).href,
+    alt: "МБОУ СОШ № 48: специализированный дорожный класс",
+    caption: "Дорожный класс",
+    width: 1800,
+    height: 1350
+  },
+  {
+    src: new URL("../assets/object-photos/3/IMG_0117.webp", import.meta.url).href,
+    alt: "МБОУ СОШ № 48: столовая зона",
+    caption: "Столовая",
+    width: 1800,
+    height: 1350
+  }
+];
+
 const contract = (details: ProjectContractDetails): ProjectContractDetails => details;
 
 const stage = (details: ProjectStage): ProjectStage => details;
@@ -41,8 +169,7 @@ export const featuredProjects: FeaturedProject[] = [
     status: "В работе",
     shortDescription:
       "Капитальный ремонт здания ГБСУСОССЗН «Ливенский дом социального обслуживания». Объект находится в процессе производства работ.",
-    images: placeholderImages("Ливенский дом социального обслуживания"),
-    isPlaceholder: true
+    images: livnySocialCareImages
   },
   {
     id: "featured-adaptive-sports-center-2024",
@@ -55,7 +182,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Спортивная инфраструктура",
     workType: "Строительство",
     cost: "476 975 549 руб.",
-    amountLabel: "Выполнено",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription:
       "Строительство спортивного центра для занятий адаптивной физической культурой и спортом в Белгороде.",
@@ -66,8 +193,7 @@ export const featuredProjects: FeaturedProject[] = [
       contractPrice: "476 975 549 руб.",
       completionDate: "25.11.2024"
     }),
-    images: placeholderImages("Спортивный центр адаптивной физической культуры и спорта"),
-    isPlaceholder: true
+    images: adaptiveSportsCenterImages
   },
   {
     id: "featured-school-48-2024",
@@ -80,11 +206,10 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Образовательная инфраструктура",
     workType: "Капитальный ремонт",
     cost: "532 000 000 руб.",
-    amountLabel: "Выполнено",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription: "Капитальный ремонт здания МБОУ СОШ № 48 в Белгороде.",
-    images: placeholderImages("МБОУ СОШ № 48"),
-    isPlaceholder: true
+    images: school48Images
   },
   {
     id: "featured-school-37-2023-2024",
@@ -96,7 +221,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Образовательная инфраструктура",
     workType: "Капитальный ремонт",
     cost: "680 100 899 руб.",
-    amountLabel: "Общая сумма",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription:
       "Объединенный объект по трем этапам капитального ремонта МБОУ СОШ № 37 в Белгороде.",
@@ -147,7 +272,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Образовательная инфраструктура",
     workType: "Капитальный ремонт",
     cost: "265 992 689,20 руб.",
-    amountLabel: "Выполнено",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription:
       "Капитальный ремонт здания учебного корпуса ОГАПОУ «Старооскольский агротехнологический техникум», мкр. Макаренко, 39, 1-й этап.",
@@ -173,7 +298,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Спортивная инфраструктура",
     workType: "Подготовка основания и монтаж покрытий",
     cost: "106 725 459 руб.",
-    amountLabel: "Выполнено",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription:
       "Подготовка основания футбольного поля, легкоатлетических беговых дорожек и монтаж искусственных покрытий стадиона.",
@@ -198,7 +323,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Образовательная инфраструктура",
     workType: "Капитальный ремонт",
     cost: "90 701 018 руб.",
-    amountLabel: "Выполнено",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription:
       "Капитальный ремонт здания учебного корпуса и мастерских ОГАПОУ «Старооскольский техникум технологий и дизайна».",
@@ -238,7 +363,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Образовательная инфраструктура",
     workType: "Капитальный ремонт",
     cost: "160 788 215 руб.",
-    amountLabel: "Общая сумма",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription:
       "Объединенный объект по капитальному ремонту учебного корпуса, общежития и актового зала Белгородского политехнического колледжа.",
@@ -288,7 +413,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Медицинская инфраструктура",
     workType: "Капитальный ремонт",
     cost: "374 172 938,83 руб.",
-    amountLabel: "Общая сумма",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription:
       "Объединенный объект по капитальному ремонту главного больничного корпуса ОГБУЗ «Городская больница № 1 г. Старый Оскол».",
@@ -328,6 +453,24 @@ export const featuredProjects: FeaturedProject[] = [
     isPlaceholder: true
   },
   {
+    id: "featured-city-hospital-2-polyclinic-2018-2019",
+    sourceNumber: 57,
+    title: "Капитальный ремонт поликлиники ОГБУЗ «Городская больница №2»",
+    year: 2019,
+    periodLabel: "2018–2019",
+    sortDate: "2019-12-01",
+    city: "Старый Оскол",
+    type: "Медицинская инфраструктура",
+    workType: "Капитальный ремонт",
+    cost: "111 307 704 руб.",
+    amountLabel: "Стоимость",
+    status: "Реализован",
+    shortDescription:
+      "Капитальный ремонт поликлиники ОГБУЗ «Городская больница №2» в Старом Осколе.",
+    images: placeholderImages("Поликлиника ОГБУЗ «Городская больница №2»"),
+    isPlaceholder: true
+  },
+  {
     id: "featured-oncology-dispensary-2012-2015",
     title: "Капитальный ремонт онкологического диспансера",
     year: 2015,
@@ -337,7 +480,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Медицинская инфраструктура",
     workType: "Капитальный ремонт",
     cost: "255 695 204,63 руб.",
-    amountLabel: "Общая сумма",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription:
       "Объединенный объект по капитальному ремонту онкологического диспансера в Белгороде: хирургический корпус, котельная, дополнительные и остаточные работы.",
@@ -461,8 +604,6 @@ export const featuredProjects: FeaturedProject[] = [
     status: "Реализован",
     shortDescription:
       "Капитальный ремонт здания историко-художественного музея-диорамы «Курская битва. Белгородское направление» в Белгороде.",
-    historicalNote:
-      "Музей-диорама открыт 4 августа 1987 года. В основной список включен капитальный ремонт здания музея.",
     images: placeholderImages("Музей-диорама Курская битва"),
     isPlaceholder: true
   },
@@ -478,7 +619,7 @@ export const featuredProjects: FeaturedProject[] = [
     type: "Коммерческая инфраструктура",
     workType: "Строительство",
     cost: "640 000 000 руб.",
-    amountLabel: "Выполнено",
+    amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription: "Строительство торгового центра «Спутник ДОМ» в Белгороде.",
     images: placeholderImages("Торговый центр Спутник ДОМ"),
@@ -497,8 +638,6 @@ export const featuredProjects: FeaturedProject[] = [
     amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription: "Строительство санатория «Красиво» в Борисовском районе Белгородской области.",
-    historicalNote:
-      "В общем списке отдельно упоминаются работы по корпусам санатория «Красиво»; точный состав объекта стоит подтвердить после финальной сверки с заказчиком.",
     images: placeholderImages("Санаторий Красиво"),
     isPlaceholder: true
   },
@@ -517,8 +656,6 @@ export const featuredProjects: FeaturedProject[] = [
     status: "Реализован",
     area: "1080 мест",
     shortDescription: "Строительство здания студенческого общежития БелГУ на 1080 мест.",
-    historicalNote:
-      "В утвержденном списке объект указан как здание студенческого общежития БелГУ на 1080 мест; точный адрес в исходных данных не указан.",
     images: placeholderImages("Студенческое общежитие БелГУ на 1080 мест"),
     isPlaceholder: true
   }
