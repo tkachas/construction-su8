@@ -84,15 +84,20 @@
 .mobileCarousel {
   display: none;
   isolation: isolate;
-  overflow-x: clip;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .mobileDates {
   display: flex;
   gap: 8px;
+  max-width: 100%;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   padding: 2px 0 10px;
   scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobileDates button {
@@ -121,7 +126,9 @@
 }
 
 .mobileViewport {
-  contain: paint;
+  contain: layout paint;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   touch-action: pan-y pinch-zoom;
 }
@@ -130,7 +137,9 @@
   display: flex;
   align-items: stretch;
   backface-visibility: hidden;
+  min-width: 0;
   touch-action: pan-y pinch-zoom;
+  width: 100%;
   will-change: transform;
 }
 
@@ -140,8 +149,11 @@
   display: flex;
   align-items: stretch;
   flex: 0 0 100%;
+  max-width: 100%;
   min-width: 0;
+  overflow: hidden;
   transform: translateZ(0);
+  width: 100%;
 }
 
 .mobileSlide > article {
