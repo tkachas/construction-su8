@@ -72,10 +72,10 @@ export function ProjectGallery({ images, projectTitle }: ProjectGalleryProps) {
                   <span>{index === 0 ? "Основное фото будет добавлено" : "Фото будет добавлено"}</span>
                 </div>
               )}
-              <figcaption>
+              {/* <figcaption>
                 <span>{image.caption ?? `Фото ${index + 1}`}</span>
                 <span>{index + 1} / {images.length}</span>
-              </figcaption>
+              </figcaption> */}
             </figure>
           ))}
         </div>
