@@ -30,21 +30,29 @@ export function ProjectGallery({ images, projectTitle }: ProjectGalleryProps) {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
-  useEffect(() => {
+  const syncCarouselState = useCallback(() => {
     if (!emblaApi) {
       return;
     }
 
     setScrollSnaps(emblaApi.scrollSnapList());
-    onSelect();
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) {
+      return;
+    }
+
+    syncCarouselState();
     emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
+    emblaApi.on("reInit", syncCarouselState);
 
     return () => {
       emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
+      emblaApi.off("reInit", syncCarouselState);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApi, onSelect, syncCarouselState]);
 
   return (
     <div className={styles.gallery} aria-label={`Фотографии объекта: ${projectTitle}`}>
