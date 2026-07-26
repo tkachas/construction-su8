@@ -545,6 +545,404 @@ const cityHospital1Images: ProjectImage[] = [
   }
 ];
 
+const cityHospital2PolyclinicMainPreview = new URL("../assets/object-photos/10/IMG_0307-preview.webp", import.meta.url).href;
+const cityHospital2PolyclinicMain = new URL("../assets/object-photos/10/IMG_0307.webp", import.meta.url).href;
+const cityHospital2PolyclinicEntranceRampPreview = new URL("../assets/object-photos/10/IMG_0305-preview.webp", import.meta.url).href;
+const cityHospital2PolyclinicEntranceRamp = new URL("../assets/object-photos/10/IMG_0305.webp", import.meta.url).href;
+const cityHospital2PolyclinicSideFacadePreview = new URL("../assets/object-photos/10/IMG_0308-preview.webp", import.meta.url).href;
+const cityHospital2PolyclinicSideFacade = new URL("../assets/object-photos/10/IMG_0308.webp", import.meta.url).href;
+const cityHospital2PolyclinicDrivewayPreview = new URL("../assets/object-photos/10/IMG_0309-preview.webp", import.meta.url).href;
+const cityHospital2PolyclinicDriveway = new URL("../assets/object-photos/10/IMG_0309.webp", import.meta.url).href;
+const cityHospital2PolyclinicYardFacadePreview = new URL("../assets/object-photos/10/IMG_0313-preview.webp", import.meta.url).href;
+const cityHospital2PolyclinicYardFacade = new URL("../assets/object-photos/10/IMG_0313.webp", import.meta.url).href;
+const cityHospital2PolyclinicParkingSidePreview = new URL("../assets/object-photos/10/IMG_0314-preview.webp", import.meta.url).href;
+const cityHospital2PolyclinicParkingSide = new URL("../assets/object-photos/10/IMG_0314.webp", import.meta.url).href;
+
+const cityHospital2PolyclinicImages: ProjectImage[] = [
+  {
+    src: cityHospital2PolyclinicMainPreview,
+    srcSet: `${cityHospital2PolyclinicMainPreview} 960w, ${cityHospital2PolyclinicMain} 1600w`,
+    alt: "Поликлиника ОГБУЗ Городская больница №2: главный фасад и входная зона после капитального ремонта",
+    caption: "Главный фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital2PolyclinicEntranceRampPreview,
+    srcSet: `${cityHospital2PolyclinicEntranceRampPreview} 960w, ${cityHospital2PolyclinicEntranceRamp} 1600w`,
+    alt: "Поликлиника ОГБУЗ Городская больница №2: входная группа и пандус",
+    caption: "Входная группа",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital2PolyclinicSideFacadePreview,
+    srcSet: `${cityHospital2PolyclinicSideFacadePreview} 960w, ${cityHospital2PolyclinicSideFacade} 1600w`,
+    alt: "Поликлиника ОГБУЗ Городская больница №2: боковой фасад и территория объекта",
+    caption: "Боковой фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital2PolyclinicDrivewayPreview,
+    srcSet: `${cityHospital2PolyclinicDrivewayPreview} 960w, ${cityHospital2PolyclinicDriveway} 1600w`,
+    alt: "Поликлиника ОГБУЗ Городская больница №2: проезд вдоль обновленного корпуса",
+    caption: "Проезд вдоль корпуса",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital2PolyclinicYardFacadePreview,
+    srcSet: `${cityHospital2PolyclinicYardFacadePreview} 960w, ${cityHospital2PolyclinicYardFacade} 1600w`,
+    alt: "Поликлиника ОГБУЗ Городская больница №2: фасад корпуса со стороны внутренней территории",
+    caption: "Фасад со стороны двора",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: cityHospital2PolyclinicParkingSidePreview,
+    srcSet: `${cityHospital2PolyclinicParkingSidePreview} 960w, ${cityHospital2PolyclinicParkingSide} 1600w`,
+    alt: "Поликлиника ОГБУЗ Городская больница №2: боковая сторона корпуса и парковочная зона",
+    caption: "Боковая сторона корпуса",
+    width: 1600,
+    height: 2133
+  }
+];
+
+const oncologyDispensaryMainFacadePreview = new URL("../assets/object-photos/11/IMG_0001-preview.webp", import.meta.url).href;
+const oncologyDispensaryMainFacade = new URL("../assets/object-photos/11/IMG_0001.webp", import.meta.url).href;
+const oncologyDispensarySideBlockPreview = new URL("../assets/object-photos/11/IMG_0163-preview.webp", import.meta.url).href;
+const oncologyDispensarySideBlock = new URL("../assets/object-photos/11/IMG_0163.webp", import.meta.url).href;
+const oncologyDispensaryDrivewayPreview = new URL("../assets/object-photos/11/IMG_0164-preview.webp", import.meta.url).href;
+const oncologyDispensaryDriveway = new URL("../assets/object-photos/11/IMG_0164.webp", import.meta.url).href;
+const oncologyDispensaryGreenFacadePreview = new URL("../assets/object-photos/11/IMG_0165-preview.webp", import.meta.url).href;
+const oncologyDispensaryGreenFacade = new URL("../assets/object-photos/11/IMG_0165.webp", import.meta.url).href;
+const oncologyDispensaryEntranceCanopyPreview = new URL("../assets/object-photos/11/IMG_0166-preview.webp", import.meta.url).href;
+const oncologyDispensaryEntranceCanopy = new URL("../assets/object-photos/11/IMG_0166.webp", import.meta.url).href;
+const oncologyDispensaryRampPreview = new URL("../assets/object-photos/11/IMG_0167-preview.webp", import.meta.url).href;
+const oncologyDispensaryRamp = new URL("../assets/object-photos/11/IMG_0167.webp", import.meta.url).href;
+const oncologyDispensaryRestAreaPreview = new URL("../assets/object-photos/11/IMG_0168-preview.webp", import.meta.url).href;
+const oncologyDispensaryRestArea = new URL("../assets/object-photos/11/IMG_0168.webp", import.meta.url).href;
+const oncologyDispensaryTerritoryPreview = new URL("../assets/object-photos/11/P1012485-preview.webp", import.meta.url).href;
+const oncologyDispensaryTerritory = new URL("../assets/object-photos/11/P1012485.webp", import.meta.url).href;
+
+const oncologyDispensaryImages: ProjectImage[] = [
+  {
+    src: oncologyDispensaryMainFacadePreview,
+    srcSet: `${oncologyDispensaryMainFacadePreview} 960w, ${oncologyDispensaryMainFacade} 1600w`,
+    alt: "Белгородский онкологический диспансер: главный фасад корпуса после капитального ремонта",
+    caption: "Главный фасад",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: oncologyDispensarySideBlockPreview,
+    srcSet: `${oncologyDispensarySideBlockPreview} 960w, ${oncologyDispensarySideBlock} 1600w`,
+    alt: "Белгородский онкологический диспансер: боковой корпус после капитального ремонта",
+    caption: "Боковой корпус",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: oncologyDispensaryDrivewayPreview,
+    srcSet: `${oncologyDispensaryDrivewayPreview} 960w, ${oncologyDispensaryDriveway} 1600w`,
+    alt: "Белгородский онкологический диспансер: проезд и обновленный фасад корпуса",
+    caption: "Проезд к корпусу",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: oncologyDispensaryGreenFacadePreview,
+    srcSet: `${oncologyDispensaryGreenFacadePreview} 960w, ${oncologyDispensaryGreenFacade} 1600w`,
+    alt: "Белгородский онкологический диспансер: фасад корпуса со стороны пешеходной зоны",
+    caption: "Фасад у пешеходной зоны",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: oncologyDispensaryEntranceCanopyPreview,
+    srcSet: `${oncologyDispensaryEntranceCanopyPreview} 960w, ${oncologyDispensaryEntranceCanopy} 1600w`,
+    alt: "Белгородский онкологический диспансер: входная зона с навесом",
+    caption: "Входная зона",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: oncologyDispensaryRampPreview,
+    srcSet: `${oncologyDispensaryRampPreview} 960w, ${oncologyDispensaryRamp} 1600w`,
+    alt: "Белгородский онкологический диспансер: пандус и благоустроенная территория",
+    caption: "Пандус и территория",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: oncologyDispensaryRestAreaPreview,
+    srcSet: `${oncologyDispensaryRestAreaPreview} 960w, ${oncologyDispensaryRestArea} 1600w`,
+    alt: "Белгородский онкологический диспансер: зона отдыха рядом с обновленным фасадом",
+    caption: "Зона отдыха",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: oncologyDispensaryTerritoryPreview,
+    srcSet: `${oncologyDispensaryTerritoryPreview} 960w, ${oncologyDispensaryTerritory} 1600w`,
+    alt: "Белгородский онкологический диспансер: корпус и территория медицинского комплекса",
+    caption: "Территория комплекса",
+    width: 1600,
+    height: 1200
+  }
+];
+
+const belgikDormitoryMainFacadePreview = new URL("../assets/object-photos/12/IMG_0122-preview.webp", import.meta.url).href;
+const belgikDormitoryMainFacade = new URL("../assets/object-photos/12/IMG_0122.webp", import.meta.url).href;
+const belgikDormitoryTowerFacadePreview = new URL("../assets/object-photos/12/IMG_0120-preview.webp", import.meta.url).href;
+const belgikDormitoryTowerFacade = new URL("../assets/object-photos/12/IMG_0120.webp", import.meta.url).href;
+const belgikDormitoryEntrancePreview = new URL("../assets/object-photos/12/IMG_0121-preview.webp", import.meta.url).href;
+const belgikDormitoryEntrance = new URL("../assets/object-photos/12/IMG_0121.webp", import.meta.url).href;
+const belgikDormitorySideFacadePreview = new URL("../assets/object-photos/12/IMG_0124-preview.webp", import.meta.url).href;
+const belgikDormitorySideFacade = new URL("../assets/object-photos/12/IMG_0124.webp", import.meta.url).href;
+
+const belgikDormitoryImages: ProjectImage[] = [
+  {
+    src: belgikDormitoryMainFacadePreview,
+    srcSet: `${belgikDormitoryMainFacadePreview} 960w, ${belgikDormitoryMainFacade} 1600w`,
+    alt: "Общежитие БелГИК на 530 мест: главный фасад с центральным остеклением",
+    caption: "Главный фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: belgikDormitoryTowerFacadePreview,
+    srcSet: `${belgikDormitoryTowerFacadePreview} 960w, ${belgikDormitoryTowerFacade} 1600w`,
+    alt: "Общежитие БелГИК на 530 мест: общий вид фасада и входной зоны",
+    caption: "Фасад и входная зона",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: belgikDormitoryEntrancePreview,
+    srcSet: `${belgikDormitoryEntrancePreview} 960w, ${belgikDormitoryEntrance} 1600w`,
+    alt: "Общежитие БелГИК на 530 мест: входная группа общежития",
+    caption: "Входная группа",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: belgikDormitorySideFacadePreview,
+    srcSet: `${belgikDormitorySideFacadePreview} 960w, ${belgikDormitorySideFacade} 1600w`,
+    alt: "Общежитие БелГИК на 530 мест: боковой фасад здания",
+    caption: "Боковой фасад",
+    width: 1600,
+    height: 2133
+  }
+];
+
+const dioramaMuseumMainEntrancePreview = new URL("../assets/object-photos/13/IMG_0081-preview.webp", import.meta.url).href;
+const dioramaMuseumMainEntrance = new URL("../assets/object-photos/13/IMG_0081.webp", import.meta.url).href;
+const dioramaMuseumMemorialStarPreview = new URL("../assets/object-photos/13/IMG_0079-preview.webp", import.meta.url).href;
+const dioramaMuseumMemorialStar = new URL("../assets/object-photos/13/IMG_0079.webp", import.meta.url).href;
+const dioramaMuseumSideEntrancePreview = new URL("../assets/object-photos/13/IMG_0080-preview.webp", import.meta.url).href;
+const dioramaMuseumSideEntrance = new URL("../assets/object-photos/13/IMG_0080.webp", import.meta.url).href;
+const dioramaMuseumTerritoryPreview = new URL("../assets/object-photos/13/IMG_0082-preview.webp", import.meta.url).href;
+const dioramaMuseumTerritory = new URL("../assets/object-photos/13/IMG_0082.webp", import.meta.url).href;
+
+const dioramaMuseumImages: ProjectImage[] = [
+  {
+    src: dioramaMuseumMainEntrancePreview,
+    srcSet: `${dioramaMuseumMainEntrancePreview} 960w, ${dioramaMuseumMainEntrance} 1600w`,
+    alt: "Музей-диорама Курская битва. Белгородское направление: главный вход после капитального ремонта",
+    caption: "Главный вход",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: dioramaMuseumMemorialStarPreview,
+    srcSet: `${dioramaMuseumMemorialStarPreview} 960w, ${dioramaMuseumMemorialStar} 1600w`,
+    alt: "Музей-диорама Курская битва. Белгородское направление: фасад и мемориальная звезда у входа",
+    caption: "Фасад и мемориальная зона",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: dioramaMuseumSideEntrancePreview,
+    srcSet: `${dioramaMuseumSideEntrancePreview} 960w, ${dioramaMuseumSideEntrance} 1600w`,
+    alt: "Музей-диорама Курская битва. Белгородское направление: боковая входная группа",
+    caption: "Боковая входная группа",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: dioramaMuseumTerritoryPreview,
+    srcSet: `${dioramaMuseumTerritoryPreview} 960w, ${dioramaMuseumTerritory} 1600w`,
+    alt: "Музей-диорама Курская битва. Белгородское направление: благоустроенная территория и фасад музея",
+    caption: "Территория музея",
+    width: 1600,
+    height: 2133
+  }
+];
+
+const sputnikDomMainFacadePreview = new URL("../assets/object-photos/14/IMG_0125-preview.webp", import.meta.url).href;
+const sputnikDomMainFacade = new URL("../assets/object-photos/14/IMG_0125.webp", import.meta.url).href;
+const sputnikDomSideWalkwayPreview = new URL("../assets/object-photos/14/IMG_0126-preview.webp", import.meta.url).href;
+const sputnikDomSideWalkway = new URL("../assets/object-photos/14/IMG_0126.webp", import.meta.url).href;
+const sputnikDomEntranceGalleryPreview = new URL("../assets/object-photos/14/IMG_0127-preview.webp", import.meta.url).href;
+const sputnikDomEntranceGallery = new URL("../assets/object-photos/14/IMG_0127.webp", import.meta.url).href;
+const sputnikDomEscalatorHallPreview = new URL("../assets/object-photos/14/IMG_0128-preview.webp", import.meta.url).href;
+const sputnikDomEscalatorHall = new URL("../assets/object-photos/14/IMG_0128.webp", import.meta.url).href;
+const sputnikDomAtriumPreview = new URL("../assets/object-photos/14/IMG_0129-preview.webp", import.meta.url).href;
+const sputnikDomAtrium = new URL("../assets/object-photos/14/IMG_0129.webp", import.meta.url).href;
+const sputnikDomRetailGalleryPreview = new URL("../assets/object-photos/14/IMG_0130-preview.webp", import.meta.url).href;
+const sputnikDomRetailGallery = new URL("../assets/object-photos/14/IMG_0130.webp", import.meta.url).href;
+const sputnikDomInnerPassagePreview = new URL("../assets/object-photos/14/IMG_0131-preview.webp", import.meta.url).href;
+const sputnikDomInnerPassage = new URL("../assets/object-photos/14/IMG_0131.webp", import.meta.url).href;
+const sputnikDomColorFacadePreview = new URL("../assets/object-photos/14/IMG_0132-preview.webp", import.meta.url).href;
+const sputnikDomColorFacade = new URL("../assets/object-photos/14/IMG_0132.webp", import.meta.url).href;
+const sputnikDomParkingFacadePreview = new URL("../assets/object-photos/14/IMG_0133-preview.webp", import.meta.url).href;
+const sputnikDomParkingFacade = new URL("../assets/object-photos/14/IMG_0133.webp", import.meta.url).href;
+
+const sputnikDomImages: ProjectImage[] = [
+  {
+    src: sputnikDomMainFacadePreview,
+    srcSet: `${sputnikDomMainFacadePreview} 960w, ${sputnikDomMainFacade} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: главный цветной фасад и входная зона",
+    caption: "Главный фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: sputnikDomSideWalkwayPreview,
+    srcSet: `${sputnikDomSideWalkwayPreview} 960w, ${sputnikDomSideWalkway} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: пешеходная зона вдоль бокового фасада",
+    caption: "Боковой фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: sputnikDomEntranceGalleryPreview,
+    srcSet: `${sputnikDomEntranceGalleryPreview} 960w, ${sputnikDomEntranceGallery} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: крытая входная галерея",
+    caption: "Входная галерея",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: sputnikDomEscalatorHallPreview,
+    srcSet: `${sputnikDomEscalatorHallPreview} 960w, ${sputnikDomEscalatorHall} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: внутренний холл с эскалаторами",
+    caption: "Холл с эскалаторами",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: sputnikDomAtriumPreview,
+    srcSet: `${sputnikDomAtriumPreview} 960w, ${sputnikDomAtrium} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: внутренняя торговая галерея",
+    caption: "Торговая галерея",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: sputnikDomRetailGalleryPreview,
+    srcSet: `${sputnikDomRetailGalleryPreview} 960w, ${sputnikDomRetailGallery} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: проход с торговыми павильонами",
+    caption: "Торговый проход",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: sputnikDomInnerPassagePreview,
+    srcSet: `${sputnikDomInnerPassagePreview} 960w, ${sputnikDomInnerPassage} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: внутренняя линия торговых помещений",
+    caption: "Внутренний проход",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: sputnikDomColorFacadePreview,
+    srcSet: `${sputnikDomColorFacadePreview} 960w, ${sputnikDomColorFacade} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: цветной фасад со стороны проезда",
+    caption: "Цветной фасад",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: sputnikDomParkingFacadePreview,
+    srcSet: `${sputnikDomParkingFacadePreview} 960w, ${sputnikDomParkingFacade} 1600w`,
+    alt: "Торговый центр Спутник ДОМ: фасад и парковочная зона",
+    caption: "Фасад и парковка",
+    width: 1600,
+    height: 1200
+  }
+];
+
+const krasivoSanatoriumFacadePreview = new URL("../assets/object-photos/15/IMG-15001-enhanced-preview.webp", import.meta.url).href;
+const krasivoSanatoriumFacade = new URL("../assets/object-photos/15/IMG-15001-enhanced.webp", import.meta.url).href;
+
+const krasivoSanatoriumImages: ProjectImage[] = [
+  {
+    src: krasivoSanatoriumFacadePreview,
+    srcSet: `${krasivoSanatoriumFacadePreview} 960w, ${krasivoSanatoriumFacade} 1449w`,
+    alt: "Санаторий Красиво: фасад лечебного корпуса и благоустроенная территория",
+    caption: "Фасад лечебного корпуса",
+    width: 1449,
+    height: 1086
+  }
+];
+
+const belguDormitory1080MainEntrancePreview = new URL("../assets/object-photos/16/IMG_0156-preview.webp", import.meta.url).href;
+const belguDormitory1080MainEntrance = new URL("../assets/object-photos/16/IMG_0156.webp", import.meta.url).href;
+const belguDormitory1080FacadePreview = new URL("../assets/object-photos/16/IMG_0153-preview.webp", import.meta.url).href;
+const belguDormitory1080Facade = new URL("../assets/object-photos/16/IMG_0153.webp", import.meta.url).href;
+const belguDormitory1080EntranceGroupPreview = new URL("../assets/object-photos/16/IMG_0154-preview.webp", import.meta.url).href;
+const belguDormitory1080EntranceGroup = new URL("../assets/object-photos/16/IMG_0154.webp", import.meta.url).href;
+const belguDormitory1080TerritoryPreview = new URL("../assets/object-photos/16/IMG_0155-preview.webp", import.meta.url).href;
+const belguDormitory1080Territory = new URL("../assets/object-photos/16/IMG_0155.webp", import.meta.url).href;
+const belguDormitory1080LobbyPreview = new URL("../assets/object-photos/16/IMG_0158-preview.webp", import.meta.url).href;
+const belguDormitory1080Lobby = new URL("../assets/object-photos/16/IMG_0158.webp", import.meta.url).href;
+
+const belguDormitory1080Images: ProjectImage[] = [
+  {
+    src: belguDormitory1080MainEntrancePreview,
+    srcSet: `${belguDormitory1080MainEntrancePreview} 960w, ${belguDormitory1080MainEntrance} 1600w`,
+    alt: "Студенческое общежитие БелГУ на 1080 мест: главный вход",
+    caption: "Главный вход",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: belguDormitory1080FacadePreview,
+    srcSet: `${belguDormitory1080FacadePreview} 960w, ${belguDormitory1080Facade} 1600w`,
+    alt: "Студенческое общежитие БелГУ на 1080 мест: фасад и территория",
+    caption: "Фасад и территория",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: belguDormitory1080EntranceGroupPreview,
+    srcSet: `${belguDormitory1080EntranceGroupPreview} 960w, ${belguDormitory1080EntranceGroup} 1600w`,
+    alt: "Студенческое общежитие БелГУ на 1080 мест: входная группа",
+    caption: "Входная группа",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: belguDormitory1080TerritoryPreview,
+    srcSet: `${belguDormitory1080TerritoryPreview} 960w, ${belguDormitory1080Territory} 1600w`,
+    alt: "Студенческое общежитие БелГУ на 1080 мест: фасад со стороны территории",
+    caption: "Фасад со стороны территории",
+    width: 1600,
+    height: 2133
+  },
+  {
+    src: belguDormitory1080LobbyPreview,
+    srcSet: `${belguDormitory1080LobbyPreview} 960w, ${belguDormitory1080Lobby} 1600w`,
+    alt: "Студенческое общежитие БелГУ на 1080 мест: входной холл",
+    caption: "Входной холл",
+    width: 1600,
+    height: 2133
+  }
+];
+
 const contract = (details: ProjectContractDetails): ProjectContractDetails => details;
 
 const stage = (details: ProjectStage): ProjectStage => details;
@@ -855,8 +1253,7 @@ export const featuredProjects: FeaturedProject[] = [
     status: "Реализован",
     shortDescription:
       "Капитальный ремонт поликлиники ОГБУЗ «Городская больница №2» в Старом Осколе.",
-    images: placeholderImages("Поликлиника ОГБУЗ «Городская больница №2»"),
-    isPlaceholder: true
+    images: cityHospital2PolyclinicImages
   },
   {
     id: "featured-oncology-dispensary-2012-2015",
@@ -954,8 +1351,7 @@ export const featuredProjects: FeaturedProject[] = [
         completionDate: "16.10.2015"
       })
     ],
-    images: placeholderImages("Онкологический диспансер"),
-    isPlaceholder: true
+    images: oncologyDispensaryImages
   },
   {
     id: "featured-belgik-dormitory-2011",
@@ -973,8 +1369,7 @@ export const featuredProjects: FeaturedProject[] = [
     status: "Реализован",
     area: "530 мест",
     shortDescription: "Строительство общежития на 530 мест для студентов БелГИК на ул. Королева, 7.",
-    images: placeholderImages("Общежитие БелГИК на 530 мест"),
-    isPlaceholder: true
+    images: belgikDormitoryImages
   },
   {
     id: "featured-diorama-museum-2008",
@@ -992,8 +1387,7 @@ export const featuredProjects: FeaturedProject[] = [
     status: "Реализован",
     shortDescription:
       "Капитальный ремонт здания историко-художественного музея-диорамы «Курская битва. Белгородское направление» в Белгороде.",
-    images: placeholderImages("Музей-диорама Курская битва"),
-    isPlaceholder: true
+    images: dioramaMuseumImages
   },
   {
     id: "featured-sputnik-dom-2007",
@@ -1010,8 +1404,7 @@ export const featuredProjects: FeaturedProject[] = [
     amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription: "Строительство торгового центра «Спутник ДОМ» в Белгороде.",
-    images: placeholderImages("Торговый центр Спутник ДОМ"),
-    isPlaceholder: true
+    images: sputnikDomImages
   },
   {
     id: "featured-krasivo-sanatorium-2003-2004",
@@ -1026,8 +1419,7 @@ export const featuredProjects: FeaturedProject[] = [
     amountLabel: "Стоимость",
     status: "Реализован",
     shortDescription: "Строительство санатория «Красиво» в Борисовском районе Белгородской области.",
-    images: placeholderImages("Санаторий Красиво"),
-    isPlaceholder: true
+    images: krasivoSanatoriumImages
   },
   {
     id: "featured-belgu-dormitory-1080-2003-2004",
@@ -1044,7 +1436,6 @@ export const featuredProjects: FeaturedProject[] = [
     status: "Реализован",
     area: "1080 мест",
     shortDescription: "Строительство здания студенческого общежития БелГУ на 1080 мест.",
-    images: placeholderImages("Студенческое общежитие БелГУ на 1080 мест"),
-    isPlaceholder: true
+    images: belguDormitory1080Images
   }
 ];
