@@ -55,11 +55,11 @@ export function FeaturedTimeline({ projects, onOpenProject }: FeaturedTimelinePr
     }
 
     handleMobileSelect();
-    mobileCarouselApi.on("settle", handleMobileSelect);
+    mobileCarouselApi.on("select", handleMobileSelect);
     mobileCarouselApi.on("reInit", handleMobileSelect);
 
     return () => {
-      mobileCarouselApi.off("settle", handleMobileSelect);
+      mobileCarouselApi.off("select", handleMobileSelect);
       mobileCarouselApi.off("reInit", handleMobileSelect);
     };
   }, [mobileCarouselApi, handleMobileSelect]);
