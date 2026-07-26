@@ -101,9 +101,72 @@
 }
 
 .metrics dd {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
   margin: 4px 0 0;
   color: var(--color-muted);
   font-size: 0.9rem;
+}
+
+.metricNote {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.noteTrigger {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: currentColor;
+  cursor: help;
+  opacity: 0.62;
+}
+
+.noteTrigger:hover,
+.noteTrigger:focus-visible {
+  opacity: 1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(198, 103, 39, 0.18);
+}
+
+.noteTooltip {
+  position: absolute;
+  right: -4px;
+  bottom: calc(100% + 8px);
+  z-index: 10;
+  width: max-content;
+  max-width: min(220px, calc(100vw - 48px));
+  padding: 8px 10px;
+  border: 1px solid rgba(31, 37, 40, 0.18);
+  border-radius: 6px;
+  background: rgba(31, 37, 40, 0.96);
+  box-shadow: var(--shadow-soft);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.metricNote:hover .noteTooltip,
+.metricNote:focus-within .noteTooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 980px) {
